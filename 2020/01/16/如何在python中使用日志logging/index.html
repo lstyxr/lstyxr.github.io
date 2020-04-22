@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="debug,Critical,Error,Info,logging,python日志,Warning,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="日志的作用 它可以记录你写的代码的情况，比如用户在什么时候做了什么操作，导致了什么样的错误，在哪一行代码出错了…  可以清晰的了解你的程序的执行流程。  可以通过日志来分析，你的代码哪里可以优化得更好一点。  日志和直接 print 的区别在于，日志可以存储，你可以将记录下来的日志存储到指定的目录，根据时间区分文件，下次就可以直接到指定位置查看。  日志可以配置，你可以让日志以你喜欢的格式输出，可">
+<meta name="keywords" content="debug,Critical,Error,Info,logging,python日志,Warning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在python中使用日志logging">
+<meta property="og:url" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="日志的作用 它可以记录你写的代码的情况，比如用户在什么时候做了什么操作，导致了什么样的错误，在哪一行代码出错了…  可以清晰的了解你的程序的执行流程。  可以通过日志来分析，你的代码哪里可以优化得更好一点。  日志和直接 print 的区别在于，日志可以存储，你可以将记录下来的日志存储到指定的目录，根据时间区分文件，下次就可以直接到指定位置查看。  日志可以配置，你可以让日志以你喜欢的格式输出，可">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/1.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/4.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/5.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/6.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/7.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/8.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/9.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/11.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/10.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/12.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/13.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/14.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/15.png">
+<meta property="og:updated_time" content="2020-01-16T08:31:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在python中使用日志logging">
+<meta name="twitter:description" content="日志的作用 它可以记录你写的代码的情况，比如用户在什么时候做了什么操作，导致了什么样的错误，在哪一行代码出错了…  可以清晰的了解你的程序的执行流程。  可以通过日志来分析，你的代码哪里可以优化得更好一点。  日志和直接 print 的区别在于，日志可以存储，你可以将记录下来的日志存储到指定的目录，根据时间区分文件，下次就可以直接到指定位置查看。  日志可以配置，你可以让日志以你喜欢的格式输出，可">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/16/如何在python中使用日志logging/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/16/如何在python中使用日志logging/">
+
+
+
+
+
+  <title>如何在python中使用日志logging | Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/如何在python中使用日志logging/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何在python中使用日志logging</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-16T10:41:18+08:00">
+                2020-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/16/如何在python中使用日志logging/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/16/如何在python中使用日志logging/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="日志的作用"><a href="#日志的作用" class="headerlink" title="日志的作用"></a>日志的作用</h1><ol>
+<li><p>它可以记录你写的代码的情况，比如用户在什么时候做了什么操作，导致了什么样的错误，在哪一行代码出错了…</p>
+</li>
+<li><p>可以清晰的了解你的程序的执行流程。</p>
+</li>
+<li><p>可以通过日志来分析，你的代码哪里可以优化得更好一点。</p>
+</li>
+<li><p>日志和直接 print 的区别在于，日志可以存储，你可以将记录下来的日志存储到指定的目录，根据时间区分文件，下次就可以直接到指定位置查看。</p>
+</li>
+<li><p>日志可以配置，你可以让日志以你喜欢的格式输出，可以指定它的存储位置等。</p>
+</li>
+</ol>
+<h1 id="python内置日志模块-logging-介绍"><a href="#python内置日志模块-logging-介绍" class="headerlink" title="python内置日志模块 logging 介绍"></a>python内置日志模块 logging 介绍</h1><p>一般情况下，logging 的级别有这么几种：</p>
+<ol>
+<li><p>Debug （调试信息）</p>
+</li>
+<li><p>Info （日志信息）</p>
+</li>
+<li><p>Warning （警告信息）</p>
+</li>
+<li><p>Error （错误信息）</p>
+</li>
+<li><p>Critical （严重危险信息）</p>
+</li>
+</ol>
+<p>下面分别来操作一下</p>
+<img src="/2020/01/16/如何在python中使用日志logging/1.png">
+<p>可以看到，调试信息与日志信息不会输出，其它三个会输出，输不输出这都可以设置的<br>默认输出格式如下：<strong>log级别：log用户：信息</strong><br>WARNING:root:警告信息<br>ERROR:root:错误信息<br>CRITICAL:root:严重危险信息<br>默认的 log用户为 root, 可以修改如下 ：</p>
+<img src="/2020/01/16/如何在python中使用日志logging/2.png">
+
+<h1 id="设置logging"><a href="#设置logging" class="headerlink" title="设置logging"></a>设置logging</h1><ol>
+<li>设置要记录的日志级别为 Debug 级<img src="/2020/01/16/如何在python中使用日志logging/3.png"> debug级的信息成功输出</li>
+<li>设置输出格式<blockquote>
+<p>process ： 进程</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>levelname： 日志级别名称</p>
+</blockquote>
+<blockquote>
+<p>message： 日志信息</p>
+</blockquote>
+<blockquote>
+<p>asctime： 时间</p>
+</blockquote>
+<img src="/2020/01/16/如何在python中使用日志logging/4.png">
+
+<p>用 format 或者 f-string 对输出结果再次加内容格式化输出</p>
+<ul>
+<li>format<img src="/2020/01/16/如何在python中使用日志logging/5.png"></li>
+<li>f-string<img src="/2020/01/16/如何在python中使用日志logging/6.png">
+
+</li>
+</ul>
+<h1 id="用logging-捕获异常"><a href="#用logging-捕获异常" class="headerlink" title="用logging 捕获异常"></a>用logging 捕获异常</h1><p>结合try…except 捕获异常信息</p>
+<img src="/2020/01/16/如何在python中使用日志logging/7.png">
+<p>灵活用在需要的地方</p>
+<img src="/2020/01/16/如何在python中使用日志logging/8.png">
+
+<h1 id="将日志存储为文件"><a href="#将日志存储为文件" class="headerlink" title="将日志存储为文件"></a>将日志存储为文件</h1><img src="/2020/01/16/如何在python中使用日志logging/9.png">
+<p>在设置中增加了一条<img src="/2020/01/16/如何在python中使用日志logging/11.png"><br>再次运行没有适时输出，但生成了一个文件</p>
+<img src="/2020/01/16/如何在python中使用日志logging/10.png">
+<p>同样可以对输出文件的内容进行格式化</p>
+<img src="/2020/01/16/如何在python中使用日志logging/12.png"><img src="/2020/01/16/如何在python中使用日志logging/13.png">
+
+<p>还可以单独建立配置文件，在项目中直接引用以统一所有模块的日志风格<br>配置文件模板</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[loggers] </span><br><span class="line">keys=root,simpleExample </span><br><span class="line"></span><br><span class="line">[handlers] </span><br><span class="line">keys=consoleHandler </span><br><span class="line"></span><br><span class="line">[formatters] </span><br><span class="line">keys=simpleFormatter </span><br><span class="line"></span><br><span class="line">[logger_root] </span><br><span class="line">level=DEBUG </span><br><span class="line">handlers=consoleHandler</span><br><span class="line"> </span><br><span class="line">[logger_simpleExample] </span><br><span class="line">level=DEBUG </span><br><span class="line">handlers=consoleHandler </span><br><span class="line">qualname=simpleExample </span><br><span class="line">propagate=0 </span><br><span class="line"></span><br><span class="line">[handler_consoleHandler] </span><br><span class="line">class=StreamHandler </span><br><span class="line">level=DEBUG </span><br><span class="line">formatter=simpleFormatter </span><br><span class="line">args=(sys.stdout,) </span><br><span class="line"></span><br><span class="line">[formatter_simpleFormatter] </span><br><span class="line">format=%(asctime)s - %(name)s - %(levelname)s - %(message)s </span><br><span class="line">datefmt=</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/01/16/如何在python中使用日志logging/14.png">
+
+<p>运行结果：</p>
+<img src="/2020/01/16/如何在python中使用日志logging/15.png">
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/debug/" rel="tag"># debug</a>
+          
+            <a href="/tags/Critical/" rel="tag"># Critical</a>
+          
+            <a href="/tags/Error/" rel="tag"># Error</a>
+          
+            <a href="/tags/Info/" rel="tag"># Info</a>
+          
+            <a href="/tags/logging/" rel="tag"># logging</a>
+          
+            <a href="/tags/python日志/" rel="tag"># python日志</a>
+          
+            <a href="/tags/Warning/" rel="tag"># Warning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/13/电子书或者Python文档如何制作供远程访问/" rel="next" title="电子书或者Python文档如何制作供远程访问">
+                <i class="fa fa-chevron-left"></i> 电子书或者Python文档如何制作供远程访问
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/16/测试代码单元测试unittest/" rel="prev" title="测试代码单元测试unittest">
+                测试代码单元测试unittest <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#日志的作用"><span class="nav-number">1.</span> <span class="nav-text">日志的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python内置日志模块-logging-介绍"><span class="nav-number">2.</span> <span class="nav-text">python内置日志模块 logging 介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置logging"><span class="nav-number">3.</span> <span class="nav-text">设置logging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用logging-捕获异常"><span class="nav-number">4.</span> <span class="nav-text">用logging 捕获异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将日志存储为文件"><span class="nav-number">5.</span> <span class="nav-text">将日志存储为文件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

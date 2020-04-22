@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="next,生成器,isinstance,Iterable,Iterator,Python进阶,可迭代对象Iterable,迭代器Iterator,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="理解可迭代对象容器: 列表、字典、元组、集合等都是将数据封装起来也供使用，只是它们各自的“安排方式”不同 容器可以被循环 for item in 容器: 这些可以被 for 循环的容器（对象）我们就说它是可迭代的，也就是可迭代对象，是 Iterable 的 isinstance() 函数来判断一个对象是否是一个已知的类型可以通过 isinstance 来判断这个对象是否可迭代（Iterable）">
+<meta name="keywords" content="next,生成器,isinstance,Iterable,Iterator,Python进阶,可迭代对象Iterable,迭代器Iterator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是Python的可迭代对象迭代器">
+<meta property="og:url" content="http://yoursite.com/2019/11/21/什么是Python的可迭代对象迭代器/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="理解可迭代对象容器: 列表、字典、元组、集合等都是将数据封装起来也供使用，只是它们各自的“安排方式”不同 容器可以被循环 for item in 容器: 这些可以被 for 循环的容器（对象）我们就说它是可迭代的，也就是可迭代对象，是 Iterable 的 isinstance() 函数来判断一个对象是否是一个已知的类型可以通过 isinstance 来判断这个对象是否可迭代（Iterable）">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-21T07:42:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么是Python的可迭代对象迭代器">
+<meta name="twitter:description" content="理解可迭代对象容器: 列表、字典、元组、集合等都是将数据封装起来也供使用，只是它们各自的“安排方式”不同 容器可以被循环 for item in 容器: 这些可以被 for 循环的容器（对象）我们就说它是可迭代的，也就是可迭代对象，是 Iterable 的 isinstance() 函数来判断一个对象是否是一个已知的类型可以通过 isinstance 来判断这个对象是否可迭代（Iterable）">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/21/什么是Python的可迭代对象迭代器/">
+
+
+
+
+
+  <title>什么是Python的可迭代对象迭代器 | Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/什么是Python的可迭代对象迭代器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">什么是Python的可迭代对象迭代器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-21T11:13:31+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/21/什么是Python的可迭代对象迭代器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/21/什么是Python的可迭代对象迭代器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="理解可迭代对象"><a href="#理解可迭代对象" class="headerlink" title="理解可迭代对象"></a>理解可迭代对象</h1><p>容器: 列表、字典、元组、集合等<br>都是将数据封装起来也供使用，只是它们各自的“安排方式”不同</p>
+<p>容器可以被循环</p>
+<p>for item in 容器:</p>
+<p>这些可以被 for 循环的容器（对象）<br>我们就说它是可迭代的，<br>也就是<strong>可迭代对象，是 Iterable 的</strong></p>
+<p>isinstance() 函数来判断一个对象是否是一个已知的类型<br>可以通过 isinstance 来判断这个对象是否可迭代（Iterable）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from collections import Iterable</span><br><span class="line"></span><br><span class="line">print(&apos;列表&apos;, isinstance([], Iterable))</span><br><span class="line">print(&apos;字典&apos;, isinstance(&#123;&#125;, Iterable))</span><br><span class="line">print(&apos;元组&apos;, isinstance((), Iterable))</span><br><span class="line">print(&apos;字符串&apos;, isinstance(&apos;&apos;, Iterable))</span><br><span class="line">print(&apos;整数&apos;, isinstance(66, Iterable))</span><br><span class="line">print(&apos;生成器&apos;, isinstance((i for i in range(10)), Iterable))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列表 True<br>字典 True<br>元组 True<br>字符串 True<br>整数 False<br>生成器 True</p>
+</blockquote>
+<p>可以看到，除了整型对象外，其余对象、<strong>生成器</strong>均是可迭代对象</p>
+<p>这些可迭代对象（Iterable）可以生成迭代器（Iterator）</p>
+<h1 id="迭代器的特点"><a href="#迭代器的特点" class="headerlink" title="迭代器的特点"></a>迭代器的特点</h1><p>当我们去使用迭代器的时候，<br>我们不用关心这个对象的长度，<br>不用关心容器里面是如何安排数据的。</p>
+<p>迭代器之所以可迭代，<br>是因为它们提供了一个 next() 方法，<br>通过这个方法我们可以不断的去获取容器里面的下一个元素，<br>直到这个容器没有数据然后报 StopIteration 为止：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [11, 22, 33, 44, 212]</span><br><span class="line">print(next(list1))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘list’ object is not an iterator</p>
+</blockquote>
+<p>这里列表是可迭代对象(Iterable)，但还不是迭代器，因此不能使用 next() 方法<br>将列表转为迭代器（Iterator）要使用<strong>iter</strong> 魔法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">list1 = [11, 22, 33, 44, 212].__iter__()</span><br><span class="line">print(next(list1))</span><br><span class="line">print(next(list1))</span><br><span class="line">print(next(list1))</span><br><span class="line">print(next(list1))</span><br><span class="line">print(next(list1))</span><br><span class="line">print(next(list1))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>22<br>33<br>44<br>212<br>StopIteration</p>
+</blockquote>
+<p>可以看到，我们这里调用 iter 魔法方法，<br>成功将列表（可迭代对象）变为 迭代器（Iterator）, 从而使用 next 方法</p>
+<p>可以通过 isinstance 来判断这个对象是否是迭代器（Iterator）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from collections import Iterator</span><br><span class="line">print(&apos;列表&apos;, isinstance(iter([]), Iterator))</span><br><span class="line">print(&apos;字典&apos;, isinstance(iter(&#123;&#125;), Iterator))</span><br><span class="line">print(&apos;元组&apos;, isinstance(iter(()), Iterator))</span><br><span class="line">print(&apos;字符串&apos;, isinstance(iter(&apos;&apos;), Iterator))</span><br><span class="line">print(&apos;整数&apos;, isinstance(66, Iterator))</span><br><span class="line">print(&apos;生成器&apos;, isinstance((i for i in range(10)), Iterator))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>列表 True<br>字典 True<br>元组 True<br>字符串 True<br>整数 False<br>生成器 True</p>
+</blockquote>
+<p>从以上输出结果可以看出<br>生成器本身也是迭代器（iterator）<br>所以不用 iter 魔法转换，<br>生成器继可以用 next 不断迭代，也可以使用 for 循环。</p>
+<p>只有可迭代对象才能用 iter 魔法转换为 迭代器（iterator）<br>所以下列代码中 iter(66)报措</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;整数&apos;, isinstance(iter(66), Iterator))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘int’ object is not iterable</p>
+</blockquote>
+<p><strong>总结</strong><br>到这里你应该明白这么几点：</p>
+<p>1、迭代和我们一般所认为的遍历枚举的差别在于：<br>迭代是不需要知道容器的“容量”的，<br>每次访问都可以获取到下一个元素，直到没有为止。<br>就好像你去 Apple 官网买 iPhone 一样，<br>你不需要他们罗列出了多少台手机，<br>你可以一直买，<br>每次他都给你发手机，<br>直到没货了，<br>他才会跟你说不好意思，库存不足。（StopIteration）停止迭代</p>
+<p>2、可迭代对象不可以使用 next() 方法，迭代器才可以，<br>如何成为迭代器呢？使用 iter 方法。</p>
+<p>3、迭代器是在每次获取才去计算下一个元素的，<br>所以它降低不必要的内存浪费，也可以存储一些 “理想” 的数据，<br>比如可以存储根据一定规律的无穷个数字：“2,4,6,8,10…….10000000000000(无穷)”，<br>但是用一般的列表来存储的话，根本不可能，内存早就爆炸了。</p>
+<p>4、 for i in 迭代器的过程中，实际上就是再不断的调用 next()：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = iter(range(10))</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">for item in list1:</span><br><span class="line">    print(item)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&lt;range_iterator object at 0x0293DCF8&gt;<br>0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</p>
+</blockquote>
+<p>等价于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">list1 = iter(range(10))</span><br><span class="line">print(list1)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        print(next(list1))</span><br><span class="line">    except StopIteration:  # 没有数据了</span><br><span class="line">        break</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>&lt;range_iterator object at 0x0263DCF8&gt;<br>0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</p>
+</blockquote>
+<p>5、生成器是一个迭代器。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/next/" rel="tag"># next</a>
+          
+            <a href="/tags/生成器/" rel="tag"># 生成器</a>
+          
+            <a href="/tags/isinstance/" rel="tag"># isinstance</a>
+          
+            <a href="/tags/Iterable/" rel="tag"># Iterable</a>
+          
+            <a href="/tags/Iterator/" rel="tag"># Iterator</a>
+          
+            <a href="/tags/Python进阶/" rel="tag"># Python进阶</a>
+          
+            <a href="/tags/可迭代对象Iterable/" rel="tag"># 可迭代对象Iterable</a>
+          
+            <a href="/tags/迭代器Iterator/" rel="tag"># 迭代器Iterator</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/19/yield是什么魔鬼生成器/" rel="next" title="yield是什么魔鬼生成器">
+                <i class="fa fa-chevron-left"></i> yield是什么魔鬼生成器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/22/使用enumerate来枚举可遍历对象/" rel="prev" title="使用enumerate来枚举可遍历对象">
+                使用enumerate来枚举可遍历对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#理解可迭代对象"><span class="nav-number">1.</span> <span class="nav-text">理解可迭代对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#迭代器的特点"><span class="nav-number">2.</span> <span class="nav-text">迭代器的特点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

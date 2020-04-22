@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="使用so库文件,python扩展,C语言,C语言开发环境搭建GCC,mingw安装使用,IronPython,java,java编译,Jython,python与Java交互,动态语言扩展,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python语言搞开发高效是高效，但确实是在牺牲效率的基础上取得的便利，Java、C等语言可以弥补其运行效率的不足。 调用C语言一些底层开发需要借助C语言来完成，这是常态。 WINDOWS环境C语言GCC搭建由于.so文件是Linux系统中的，与windows系统的.dll文件相似，即是一些动态链接库文件，python 调用C语言正是调用的.so库文件，因此有极其重要的作用，这里需要将C代码编译为">
+<meta name="keywords" content="使用so库文件,python扩展,C语言,C语言开发环境搭建GCC,mingw安装使用,IronPython,java,java编译,Jython,python与Java交互,动态语言扩展">
+<meta property="og:type" content="article">
+<meta property="og:title" content="调用C语言java语言">
+<meta property="og:url" content="http://yoursite.com/2020/02/03/如何调用C语言/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="Python语言搞开发高效是高效，但确实是在牺牲效率的基础上取得的便利，Java、C等语言可以弥补其运行效率的不足。 调用C语言一些底层开发需要借助C语言来完成，这是常态。 WINDOWS环境C语言GCC搭建由于.so文件是Linux系统中的，与windows系统的.dll文件相似，即是一些动态链接库文件，python 调用C语言正是调用的.so库文件，因此有极其重要的作用，这里需要将C代码编译为">
+<meta property="og:locale" content="zh">
+<meta property="og:image" content="http://yoursite.com/2020/02/03/如何调用C语言/1.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/03/如何调用C语言/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/03/如何调用C语言/3.png">
+<meta property="og:updated_time" content="2020-02-04T06:01:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="调用C语言java语言">
+<meta name="twitter:description" content="Python语言搞开发高效是高效，但确实是在牺牲效率的基础上取得的便利，Java、C等语言可以弥补其运行效率的不足。 调用C语言一些底层开发需要借助C语言来完成，这是常态。 WINDOWS环境C语言GCC搭建由于.so文件是Linux系统中的，与windows系统的.dll文件相似，即是一些动态链接库文件，python 调用C语言正是调用的.so库文件，因此有极其重要的作用，这里需要将C代码编译为">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/03/如何调用C语言/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/03/如何调用C语言/">
+
+
+
+
+
+  <title>调用C语言java语言 | Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/如何调用C语言/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">调用C语言java语言</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-03T19:35:14+08:00">
+                2020-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/03/如何调用C语言/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/03/如何调用C语言/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python语言搞开发高效是高效，但确实是在牺牲效率的基础上取得的便利，Java、C等语言可以弥补其运行效率的不足。</p>
+<h1 id="调用C语言"><a href="#调用C语言" class="headerlink" title="调用C语言"></a>调用C语言</h1><p>一些底层开发需要借助C语言来完成，这是常态。</p>
+<h2 id="WINDOWS环境C语言GCC搭建"><a href="#WINDOWS环境C语言GCC搭建" class="headerlink" title="WINDOWS环境C语言GCC搭建"></a>WINDOWS环境C语言GCC搭建</h2><p>由于.so文件是Linux系统中的，与windows系统的.dll文件相似，即是一些动态链接库文件，<strong>python 调用C语言正是调用的.so库文件</strong>，因此有极其重要的作用，这里需要将C代码编译为 .so文件，windows 环境下需要用到GCC<br>GCC的安装步骤如下：</p>
+<ol>
+<li><p>为了在 Windows 上安装 GCC，需要到MinGW 的主页 <a href="http://www.mingw.org，进入" target="_blank" rel="noopener">www.mingw.org，进入</a> MinGW 下载页面，下载最新版本的 MinGW 安装程序。或者到：<a href="http://sourceforge.net/projects/mingw/files/，下载" target="_blank" rel="noopener">http://sourceforge.net/projects/mingw/files/，下载</a> Download mingw-get-setup.exe (86.5 kB)</p>
+</li>
+<li><p>运行 Download mingw-get-setup.exe ,点击”运行”，continue等，注意记住安装的目录，如 D:\MinGw,下面修改环境变量时还会用到。</p>
+</li>
+<li><p>修改环境变量:在系统变量  Path ，中添加MinGW的安装目录。如 XX:\MinGw\bin</p>
+</li>
+<li><p>在开始菜单中，点击”运行”，输入 cmd,打开命令行:输入 mingw-get,如果弹出 MinGw installation manager 窗口，说明安装正常。此时，关闭 MinGw installation manager 窗口，否则接下来的步骤会报错</p>
+</li>
+<li><p>在cmd中输入命令 mingw-get install gcc,等待一会，gcc 就安装成功了。如果想安装 g++,gdb,只要输入命令 mingw-get install g++ 和 mingw-get install gdb</p>
+</li>
+<li><p>编译为exe可执行文件：gcc xxx.c</p>
+</li>
+<li><p>生成.so文件： gcc xxx.c -shared -fPIC -o xxx.so</p>
+</li>
+</ol>
+<p>(参考自：windows下gcc的安装和使用)[<a href="https://www.jianshu.com/p/dc0fc5d8c900]" target="_blank" rel="noopener">https://www.jianshu.com/p/dc0fc5d8c900]</a></p>
+<h2 id="python-调用-so库文件"><a href="#python-调用-so库文件" class="headerlink" title="python 调用.so库文件"></a>python 调用.so库文件</h2><p>先写一个简单的C程序如下：</p>
+<img src="/2020/02/03/如何调用C语言/1.png">
+<p>然后对其编译为.so 文件：<br>成功得到 .so 文件</p>
+<img src="/2020/02/03/如何调用C语言/2.png">
+<p>接着在 python 中调用这个.so库文件如下</p>
+<img src="/2020/02/03/如何调用C语言/3.png">
+<p>首先导入 ctypes 库，接着导入 .so库文件，然后在代码中调用 .so 库中的函数实现加法，最后打印输出正确。<br>以上就是简单的C语言与 python 的合作，在需要比较底层的开发时，调用C语言可以提高程序运行效率，加快速度，而不用去关心C语言库内部是如何实现的，都开发库给大家用了，再説一般人也看不懂库啊。</p>
+<h1 id="调用Java语言"><a href="#调用Java语言" class="headerlink" title="调用Java语言"></a>调用Java语言</h1><p>上文中的 ctype 其实是 cpython解释器中的库，Cpython就是用C语言来实现的解释器，python 默认解释器就是 Cpython,<br>除此之外，还可用用另的语言来构建解释器，比如用Java语言实现的 Jython 解释器； 由 .Net语言实现的 IronPython等等。<br>大概原理与调用C语言差不多<br>先把java写的源程序编译生成 class 文件，再打包成 jar包，然后在 python 代码中像导入模块一样导入这个包，然后就可以调用它的方法了<br>from 包名 import 类名<br>最后要用<strong>jython解释器来运行</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jython xxx.py</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/使用so库文件/" rel="tag"># 使用so库文件</a>
+          
+            <a href="/tags/python扩展/" rel="tag"># python扩展</a>
+          
+            <a href="/tags/C语言/" rel="tag"># C语言</a>
+          
+            <a href="/tags/C语言开发环境搭建GCC/" rel="tag"># C语言开发环境搭建GCC</a>
+          
+            <a href="/tags/mingw安装使用/" rel="tag"># mingw安装使用</a>
+          
+            <a href="/tags/IronPython/" rel="tag"># IronPython</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/java编译/" rel="tag"># java编译</a>
+          
+            <a href="/tags/Jython/" rel="tag"># Jython</a>
+          
+            <a href="/tags/python与Java交互/" rel="tag"># python与Java交互</a>
+          
+            <a href="/tags/动态语言扩展/" rel="tag"># 动态语言扩展</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/03/如何使用pdb来debug代码/" rel="next" title="如何使用pdb来debug代码">
+                <i class="fa fa-chevron-left"></i> 如何使用pdb来debug代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/03/元编程Python元类/" rel="prev" title="元编程Python元类">
+                元编程Python元类 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#调用C语言"><span class="nav-number">1.</span> <span class="nav-text">调用C语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WINDOWS环境C语言GCC搭建"><span class="nav-number">1.1.</span> <span class="nav-text">WINDOWS环境C语言GCC搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-调用-so库文件"><span class="nav-number">1.2.</span> <span class="nav-text">python 调用.so库文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#调用Java语言"><span class="nav-number">2.</span> <span class="nav-text">调用Java语言</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

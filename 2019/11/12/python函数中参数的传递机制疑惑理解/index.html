@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python进阶,函数,参数,不可变类型,参数传递,可变类型,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="代码1 123456def foo(arg):    arg += 1a = 2foo(a)print(a)   2  代码2 123456def foo(arg):    arg.append(6)a = [1, 2, 3]foo(a)print(a)   [1, 2, 3, 6]  可以看出，在执行完 foo 函数后代码1 变量 a 值没有变化，还是 2代码2 变量 a 值发生了变化，变为[1">
+<meta name="keywords" content="python进阶,函数,参数,不可变类型,参数传递,可变类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python函数中参数的传递机制疑惑理解">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/python函数中参数的传递机制疑惑理解/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="代码1 123456def foo(arg):    arg += 1a = 2foo(a)print(a)   2  代码2 123456def foo(arg):    arg.append(6)a = [1, 2, 3]foo(a)print(a)   [1, 2, 3, 6]  可以看出，在执行完 foo 函数后代码1 变量 a 值没有变化，还是 2代码2 变量 a 值发生了变化，变为[1">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-11-12T08:44:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python函数中参数的传递机制疑惑理解">
+<meta name="twitter:description" content="代码1 123456def foo(arg):    arg += 1a = 2foo(a)print(a)   2  代码2 123456def foo(arg):    arg.append(6)a = [1, 2, 3]foo(a)print(a)   [1, 2, 3, 6]  可以看出，在执行完 foo 函数后代码1 变量 a 值没有变化，还是 2代码2 变量 a 值发生了变化，变为[1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/12/python函数中参数的传递机制疑惑理解/">
+
+
+
+
+
+  <title>python函数中参数的传递机制疑惑理解 | Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/12/python函数中参数的传递机制疑惑理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python函数中参数的传递机制疑惑理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-12T14:53:57+08:00">
+                2019-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/12/python函数中参数的传递机制疑惑理解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/12/python函数中参数的传递机制疑惑理解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>代码1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def foo(arg):</span><br><span class="line">    arg += 1</span><br><span class="line"></span><br><span class="line">a = 2</span><br><span class="line">foo(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>代码2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def foo(arg):</span><br><span class="line">    arg.append(6)</span><br><span class="line"></span><br><span class="line">a = [1, 2, 3]</span><br><span class="line">foo(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1, 2, 3, 6]</p>
+</blockquote>
+<p>可以看出，<br>在执行完 foo 函数后<br>代码1 变量 a 值没有变化，还是 2<br>代码2 变量 a 值发生了变化，变为[1, 2, 3, 6]</p>
+<p>为什么会这样呢？<br>还是重点<strong>Python中变量叫“名称”，赋值叫“贴标签”</strong></p>
+<p>结合python中一切皆对象（object）的特点<br>a = 2, 实际是将整数对象 2 贴上了 a 这个标签<br>a = [1, 2, 3] ,实际是将列表对象 [1, 2, 3] 贴上了 a 这个标签</p>
+<p>现在再来分析这两个代码<br>代码1：<br>一开始，a=2 将整数对象2贴上标签a<br>接着执行 foo 函数，将整数对象2贴上标签arg<br>此时标签a、arg均指向整数对象2<br>函数执行 arg += 1 后<br>arg标签指向整数对象 3<br>而 a 标签还是指向整数对象2<br>这时候再执行 print(a),当然输出为 2</p>
+<p>代码2：<br>当 a = [1, 2, 3] 时，标签 a 指向列表对象[1, 2, 3]<br>把 a 传递给 foo 函数时，arg 标签同样指向列表对象[1, 2, 3]<br>执行 append(6) 时，标签 a 和 arg 同时指向列表对象[1, 2, 3, 6]<br>所以最后打印结果为 [1, 2, 3, 6]</p>
+<p>原因分析：<br>整数型 和 列表 的数据类型不同，<br><strong>整数型对象是不可变类型，而列表是可变类型</strong><br><strong>当整数型 arg += 1 时，要保持原 a = 2 内存地址不变，系统会开辟一个新的空间来创造新的内存地址给引用arg</strong><br><strong>而列表对象在 append 时，列表天生就是可变的，所以不会创建新的内存地址</strong><br><strong>注意仅仅限于 append 方法， 如果用 += 方法也是会创建新的空间的</strong><br><strong>列表在使用 append方法进行改变时只是在当前做改变，所以代码中标签 a、arg 它们均指向了同一个内存地址</strong></p>
+<p>总结<br>Python中的–赋值传递，它的关键之处在于数据类型是否可变<br>整数、元组、字符串是不可变的，所以它们作为参数进行函数操作时，会创建新的内存地址以供引用<br>列表、字典是可变的，作为参数进行函数操作时，不会创建新的地址</p>
+<p>所以，当不可变类型变量希望通过函数进行“数据改变”时，<br>代码1可以如此这般，重新贴一次标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def foo(arg):</span><br><span class="line">    return arg + 1</span><br><span class="line"></span><br><span class="line">a = 2</span><br><span class="line">a = foo(a)  # 重新贴一次标签</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3</p>
+</blockquote>
+<p><strong>注意：可变类型进行 += 操作时候，也是会创建新的内存空间的</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def foo(arg):</span><br><span class="line">    return arg + [6]</span><br><span class="line"></span><br><span class="line">a = [1, 2, 3]</span><br><span class="line">foo(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1, 2, 3]</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def foo(arg):</span><br><span class="line">    return arg + [6]</span><br><span class="line"></span><br><span class="line">a = [1, 2, 3]</span><br><span class="line">a = foo(a)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1, 2, 3, 6]</p>
+</blockquote>
+<p>进一步结论，变量在进行函数操作后，值是否改变与这些有关<br>其一是：<br>变量类型是不是可变的<br>可变：列表、字典<br>不可变：整型、元组、字符串<br>其二是：<br>方法不同<br>+= 方法，不变，需要新开辟空间<br>append 方法，可变，不用新开空间，原基础上改变</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python进阶/" rel="tag"># python进阶</a>
+          
+            <a href="/tags/函数/" rel="tag"># 函数</a>
+          
+            <a href="/tags/参数/" rel="tag"># 参数</a>
+          
+            <a href="/tags/不可变类型/" rel="tag"># 不可变类型</a>
+          
+            <a href="/tags/参数传递/" rel="tag"># 参数传递</a>
+          
+            <a href="/tags/可变类型/" rel="tag"># 可变类型</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/08/如何更好地使用print/" rel="next" title="如何更好地使用print">
+                <i class="fa fa-chevron-left"></i> 如何更好地使用print
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/14/python中的函数高级用法装饰器语法糖/" rel="prev" title="python中的函数高级用法装饰器语法糖">
+                python中的函数高级用法装饰器语法糖 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

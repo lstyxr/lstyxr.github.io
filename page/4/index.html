@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python编程学习, 程序化思维提升, 总结">
+<meta name="keywords" content="Python, 系统训练, Spider">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coding Python">
+<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="Python编程学习, 程序化思维提升, 总结">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coding Python">
+<meta name="twitter:description" content="Python编程学习, 程序化思维提升, 总结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/4/">
+
+
+
+
+
+  <title>Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/22/好好写代码注释/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/22/好好写代码注释/" itemprop="url">好好写代码注释</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-22T17:11:01+08:00">
+                2019-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/22/好好写代码注释/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/22/好好写代码注释/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>所谓注释，就是给人看的，不会被电脑执行的一些“人话”解释</strong></p>
+<p>为了让你的代码能够易于理解，易于阅读，<br>让别人或者往后的你自己回过头来看你写的代码，<br>也能够快速理解，知道你写的这些代码是干嘛的。</p>
+<p>你必须好好的写好代码注释</p>
+<h1 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"># 根据 url 下载网页内容</span><br><span class="line">def download_html(url):</span><br><span class="line">    try:</span><br><span class="line">        # 通过 request 的 get 请求链接</span><br><span class="line">        response = requests.get(url, headers=headers)  # header 要预先定义</span><br><span class="line">        # 如果返回状态码是 200 ，说明请求成功</span><br><span class="line">        if response.status_code == 200:</span><br><span class="line">            # 返回网页内容</span><br><span class="line">            return response.content</span><br><span class="line">    except requests.RequestException:</span><br><span class="line">        # 请求出现异常，错误捕获处理</span><br><span class="line">        return None</span><br></pre></td></tr></table></figure>
+
+<h1 id="行内注释"><a href="#行内注释" class="headerlink" title="行内注释"></a>行内注释</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_image = Image.new(&apos;RGB&apos;, (260, 126))  # 创建一张大小相同的图片</span><br></pre></td></tr></table></figure>
+
+<h1 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">这个 main 函数会接收一个 page 参数，然后构建一个可请求的链接 url</span><br><span class="line">然后使用 request_test 请求这个链接就会得到这个网页的内容 html</span><br><span class="line">接着利用 parse_result 解析得到的 html ，从而获取需要的关键字段信息</span><br><span class="line">最后使用 write_item_to_file 把信息写入文件</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">def main(page):</span><br><span class="line">    url = &apos;http://www.example.com/&apos; + str(page)</span><br><span class="line">    html = requests_test(url)</span><br><span class="line">    items = parse_result(html)</span><br><span class="line">    for item in items:</span><br><span class="line">        write_item_to_file(item)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/15/怎么使用python操作文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/15/怎么使用python操作文件/" itemprop="url">怎么使用python操作文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-15T16:44:02+08:00">
+                2019-10-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/15/怎么使用python操作文件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/15/怎么使用python操作文件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="操作目录"><a href="#操作目录" class="headerlink" title="操作目录"></a>操作目录</h1><h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.mkdir(&apos;test&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="重命名目录"><a href="#重命名目录" class="headerlink" title="重命名目录"></a>重命名目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(&quot;test&quot;, &quot;test_dir&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取当前目录路径"><a href="#获取当前目录路径" class="headerlink" title="获取当前目录路径"></a>获取当前目录路径</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(os.getcwd())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>G:\Python\python快速入门\python操作文件</p>
+</blockquote>
+<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.chdir(&apos;test_dir&apos;)</span><br><span class="line">print(os.getcwd())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>G:\Python\python快速入门\python操作文件\test_dir</p>
+</blockquote>
+<h2 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h2><p>注意不能删除当前目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(&apos;test_dir&apos;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="操作文件"><a href="#操作文件" class="headerlink" title="操作文件"></a>操作文件</h1><h2 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_file = open(&apos;file.txt&apos;)</span><br><span class="line">print(my_file.read())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>旅行的迷人之处正是在这里<br>扛着不轻不重的今生</p>
+</blockquote>
+<h2 id="逐行读取"><a href="#逐行读取" class="headerlink" title="逐行读取"></a>逐行读取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(my_file.readline())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>旅行的迷人之处正是在这里</p>
+</blockquote>
+<h2 id="只读模式打开"><a href="#只读模式打开" class="headerlink" title="只读模式打开"></a>只读模式打开</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my_file = open(&apos;file.txt&apos;, mode=&apos;r&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="字节模式读取"><a href="#字节模式读取" class="headerlink" title="字节模式读取"></a>字节模式读取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_file = open(&apos;file.txt&apos;, mode=&apos;rb+&apos;)</span><br><span class="line">print(my_file.readline())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>b’\xc2\xc3\xd0\xd0\xb5\xc4\xc3\xd4\xc8\xcb\xd6\xae\xb4\xa6\xd5\xfd\xca\xc7\xd4\xda\xd5\xe2\xc0\xef\r\n’</p>
+</blockquote>
+<h2 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h2><p>覆盖原文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_file = open(&apos;file.txt&apos;, mode=&apos;wt&apos;, encoding=&apos;utf-8&apos;)</span><br><span class="line">my_file.write(&apos;旅行的迷人之处正是在这里&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>追加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">my_file = open(&apos;file.txt&apos;, mode=&apos;at&apos;, encoding=&apos;utf-8&apos;)</span><br><span class="line">my_file.write(&apos;\r\n扛着不重不轻的今生，&apos;)</span><br><span class="line">my_file.write(&apos;\r\n到处浏览自己的前生和来世。&apos;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>旅行的迷人之处正是在这里，<br>扛着不重不轻的今生，<br>到处浏览自己的前生和来世。</p>
+</blockquote>
+<h2 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">my_file.close()</span><br></pre></td></tr></table></figure>
+
+<h2 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.rename(&apos;file.txt&apos;, &apos;666.txt&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.remove(&apos;666.txt&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="浏览目录下全部文件"><a href="#浏览目录下全部文件" class="headerlink" title="浏览目录下全部文件"></a>浏览目录下全部文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(os.listdir())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[‘test.txt’, ‘opt_file.py’, ‘file.txt’]</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/14/python异常处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/14/python异常处理/" itemprop="url">python异常处理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-14T14:58:20+08:00">
+                2019-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/14/python异常处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/14/python异常处理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>添加异常处理代码是为了让程序在遇到异常时能继续执行，<br>而不是一有异常错误就直接挂了<br>在无法确定代码是否能够顺利成功执行<br>或者知道代码可能存在一些错误的时候，需要把异常预先处理好。</p>
+<p>try语句块中0作为除数，发生异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except ZeroDivisionError as err:</span><br><span class="line">    print(&apos;程序发生异常，错误信息： &#123;&#125;&apos;.format(err))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序发生异常，错误信息： division by zero</p>
+</blockquote>
+<h1 id="异常处理常用方法"><a href="#异常处理常用方法" class="headerlink" title="异常处理常用方法"></a>异常处理常用方法</h1><p>匹配多种异常的两种方法</p>
+<p><strong>异常分开写</strong><br>这里匹配的是：ZeroDivisionError 异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except IndexError as err:</span><br><span class="line">    print(&apos;程序发生 IndexError 异常， 错误信息：&#123;&#125;&apos;.format(err))</span><br><span class="line">except ZeroDivisionError as err:</span><br><span class="line">    print(&apos;程序发生 ZeroDivisionError 异常，错误信息：&#123;&#125;&apos;.format(err))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序发生 ZeroDivisionError 异常，错误信息：division by zero</p>
+</blockquote>
+<p><strong>异常代码合起来写，让代码更简洁些</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except (IndexError, ZeroDivisionError, FileNotFoundError) as err:</span><br><span class="line">    print(&apos;程序发生 某种 异常， 错误信息：&#123;&#125;&apos;.format(err))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序发生 某种 异常， 错误信息：division by zero</p>
+</blockquote>
+<h2 id="异常的超类是：Exception-捕获一切异常"><a href="#异常的超类是：Exception-捕获一切异常" class="headerlink" title="异常的超类是：Exception ,捕获一切异常"></a>异常的超类是：Exception ,捕获一切异常</h2><p>以下两种写法效果都能捕获异常<br>区别是第二种简写不能捕获具体为哪种异常，只能笼统的输出异常</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except Exception as err:</span><br><span class="line">    print(&apos;程序发生 某种 异常， 错误信息：&#123;&#125;&apos;.format(err))</span><br><span class="line">    </span><br><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except:</span><br><span class="line">    print(&apos;程序发生 某种 异常， 错误信息：&apos;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序发生 某种 异常， 错误信息：division by zero<br>程序发生 某种 异常， 错误信息：</p>
+</blockquote>
+<h2 id="finally语句"><a href="#finally语句" class="headerlink" title="finally语句"></a>finally语句</h2><p>总会被执行，不管有没有异常发生</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    x = 1/0</span><br><span class="line">except:</span><br><span class="line">    print(&apos;程序发生 某种 异常， 错误信息：&#123;&#125;&apos;)</span><br><span class="line">finally:</span><br><span class="line">    print(&apos;一定会被执行的 finally 语句块&apos;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>程序发生 某种 异常， 错误信息：{}<br>一定会被执行的 finally 语句块</p>
+</blockquote>
+<h2 id="else-语句的理解"><a href="#else-语句的理解" class="headerlink" title="else 语句的理解"></a>else 语句的理解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    with open(&apos;test.txt&apos;) as f:</span><br><span class="line">        f.read()</span><br><span class="line">except FileNotFoundError as err:</span><br><span class="line">    print(&apos;文件不存在，&#123;&#125;&apos;.format(err))</span><br><span class="line">else:</span><br><span class="line">    print(&apos;文件已打开，可以进一步操作了！&apos;)</span><br><span class="line">finally:</span><br><span class="line">    print(&apos;最后一定会干的事情&apos;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>‘test.txt’ 文件不存在的情况</strong></p>
+<blockquote>
+<p>文件不存在，[Errno 2] No such file or directory: ‘test.txt’<br>最后一定会干的事情    </p>
+</blockquote>
+<p><strong>‘test.txt’ 文件存在的情况</strong></p>
+<blockquote>
+<p>文件已打开，可以进一步操作了！<br>最后一定会干的事情</p>
+</blockquote>
+<h1 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h1><p>由于异常的超类是：Exception<br>所有自定义的异常类要继承：Exception 基类</p>
+<h2 id="直接实例化Exception类抛出异常"><a href="#直接实例化Exception类抛出异常" class="headerlink" title="直接实例化Exception类抛出异常"></a>直接实例化Exception类抛出异常</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">err = Exception(&apos;自己抛出一个异常&apos;)</span><br><span class="line">print(err.__sizeof__())</span><br><span class="line">print(err.__str__())</span><br><span class="line">raise err</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>32<br>自己抛出一个异常<br>Exception: 自己抛出一个异常</p>
+</blockquote>
+<h2 id="继承基类Exception，创建自定义异常类"><a href="#继承基类Exception，创建自定义异常类" class="headerlink" title="继承基类Exception，创建自定义异常类"></a>继承基类Exception，创建自定义异常类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class MyException(Exception):</span><br><span class="line">    pass</span><br><span class="line">raise MyException(&apos;用自定义的异常类抛出一个异常&apos;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>raise MyException(‘用自定义的异常类抛出一个异常’)<br><strong>main</strong>.MyException: 用自定义的异常类抛出一个异常</p>
+</blockquote>
+<h2 id="重写基类init-str"><a href="#重写基类init-str" class="headerlink" title="重写基类init, str"></a>重写基类<strong>init</strong>, <strong>str</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class MyError(Exception):</span><br><span class="line">    def __init__(self, value):</span><br><span class="line">        super(MyError, self).__init__(self)</span><br><span class="line">        self.value = value</span><br><span class="line"></span><br><span class="line">    def __str__(self):</span><br><span class="line">        return self.value</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    error = MyError(&apos;自定义异常&apos;)</span><br><span class="line">    raise error</span><br><span class="line">except MyError as err:</span><br><span class="line">    print(err)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>自定义异常</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/面向对象的多继承和super/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/08/面向对象的多继承和super/" itemprop="url">面向对象的多继承和super</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-08T11:34:16+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/08/面向对象的多继承和super/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/面向对象的多继承和super/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a><strong>单继承</strong></h1><p>定义父类Person</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line">    def __init__(self, name, age):</span><br><span class="line">        print(&apos;Person.__init__() 被调用&apos;)</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &quot;正在吃&#123;&#125;&quot;.format(food))</span><br></pre></td></tr></table></figure>
+
+<p>使用super()调用父类的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class YellowPeople(Person):</span><br><span class="line">    def __init__(self, name, age, weight):</span><br><span class="line">        print(&apos;YellowPeople.__init__() 被调用&apos;)</span><br><span class="line">        # 调用父类（基类）的初始化两种方法__init__()</span><br><span class="line">        # 1.直接使用父类名称调用，需要传入self</span><br><span class="line">        # Person.__init__(self, name, age)</span><br><span class="line">        # 2.使用super()调用</span><br><span class="line">        super().__init__(name, age)</span><br><span class="line">        self.weight = weight</span><br><span class="line"></span><br><span class="line">    def print_some(self):</span><br><span class="line">        print(self.name, &apos;今年 &#123;&#125; 岁， 体重 &#123;&#125; 斤&apos;.format(self.age, self.weight))</span><br><span class="line"></span><br><span class="line">xiaoming = YellowPeople(&apos;xiaoming&apos;, 18, 110)</span><br><span class="line">xiaoming.print_some()</span><br></pre></td></tr></table></figure>
+
+<p>直接使用父类的名称进行调用<br>与super()方式调用的区别是多传入了个self参数<br>可以看出使用super()方式调用更简洁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class YellowPeople(Person):</span><br><span class="line">    def __init__(self, name, age, weight):</span><br><span class="line">        Person.__init__(self, name, age)</span><br><span class="line">        self.weight = weight</span><br><span class="line"></span><br><span class="line">    def print_some(self):</span><br><span class="line">        print(self.name, &apos;今年 &#123;&#125; 岁， 体重 &#123;&#125; 斤&apos;.format(self.age, self.weight))</span><br><span class="line"></span><br><span class="line">xiaoming = YellowPeople(&apos;xiaoming&apos;, 18, 110)</span><br><span class="line">xiaoming.print_some()</span><br></pre></td></tr></table></figure>
+
+<p>可以看到<strong>init</strong>()的调用顺序：先子类，后父类</p>
+<blockquote>
+<p>YellowPeople.<strong>init</strong>() 被调用<br>Person.<strong>init</strong>() 被调用<br>xiaoming 今年 18 岁， 体重 110 斤</p>
+</blockquote>
+<h1 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a><strong>多继承</strong></h1><h2 id="同时继承多个父类"><a href="#同时继承多个父类" class="headerlink" title="同时继承多个父类"></a>同时继承多个父类</h2><p>拥有所有父类的属性方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line"></span><br><span class="line">    def __init__(self, name, age):</span><br><span class="line">        print(&apos;Person.__init__() 被调用&apos;)</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &quot;调用的是 Person 方法，正在吃&#123;&#125;&quot;.format(food))</span><br><span class="line">		</span><br><span class="line">class YellowPeopleFather(Person):</span><br><span class="line">    def play(self):</span><br><span class="line">        print(&apos;黄种人的 play 方法&apos;)</span><br><span class="line"></span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &apos;调用的是 YellowPeopleFather 方法， 正在吃&#123;&#125;&apos;.format(food))</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class WhitePeopleMother(Person):</span><br><span class="line">    def say(self):</span><br><span class="line">        print(&apos;白种人的 say 方法&apos;)</span><br><span class="line"></span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &apos;调用的是 WhitePeopleMother 方法， 正在吃&#123;&#125;&apos;.format(food))</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class son(YellowPeopleFather, WhitePeopleMother):</span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &apos;调用的是 son 方法，正在吃&#123;&#125;&apos;.format(food))</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"># 查看类的__mro__属性，用于调用</span><br><span class="line">print(son.__mro__)</span><br><span class="line">xiaozhang = son(&apos;xiaozhang&apos;, 18)</span><br><span class="line">xiaozhang.play()</span><br><span class="line">xiaozhang.say()</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(&lt;class ‘<strong>main</strong>.son’&gt;, &lt;class ‘<strong>main</strong>.YellowPeopleFather’&gt;, &lt;class ‘<strong>main</strong>.WhitePeopleMother’&gt;, &lt;class ‘<strong>main</strong>.Person’&gt;, &lt;class ‘object’&gt;)<br>Person.<strong>init</strong>() 被调用<br>黄种人的 play 方法<br>白种人的 say 方法</p>
+</blockquote>
+<h2 id="所有父子类都有相同的eat-方法，如何调用指定的类"><a href="#所有父子类都有相同的eat-方法，如何调用指定的类" class="headerlink" title="所有父子类都有相同的eat()方法，如何调用指定的类"></a>所有父子类都有相同的eat()方法，如何调用指定的类</h2><h3 id="son类本身就有eat方法，直接调用"><a href="#son类本身就有eat方法，直接调用" class="headerlink" title="son类本身就有eat方法，直接调用"></a>son类本身就有eat方法，直接调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class son(YellowPeopleFather, WhitePeopleMother):</span><br><span class="line">    def eat(self, food):</span><br><span class="line">        print(self.name, &apos;调用的是 son 方法，正在吃&#123;&#125;&apos;.format(food))</span><br><span class="line">    pass</span><br><span class="line">	</span><br><span class="line">xiaozhang = son(&apos;xiaozhang&apos;, 18)</span><br><span class="line">xiaozhang.eat(&apos;food&apos;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>xiaozhang 调用的是 son 方法，正在吃food</p>
+</blockquote>
+<h3 id="调用YellowPeopleFather-类中的-eat-方法"><a href="#调用YellowPeopleFather-类中的-eat-方法" class="headerlink" title="调用YellowPeopleFather 类中的 eat 方法"></a>调用YellowPeopleFather 类中的 eat 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class son(YellowPeopleFather, WhitePeopleMother):</span><br><span class="line">    def eat(self, food):</span><br><span class="line">        super().eat(&apos;food&apos;)</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>xiaozhang 调用的是 YellowPeopleFather 方法， 正在吃food</p>
+</blockquote>
+<h3 id="调用WhitePeopleMother-类中的-eat-方法"><a href="#调用WhitePeopleMother-类中的-eat-方法" class="headerlink" title="调用WhitePeopleMother 类中的 eat 方法"></a>调用WhitePeopleMother 类中的 eat 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class son(YellowPeopleFather, WhitePeopleMother):</span><br><span class="line">    def eat(self, food):</span><br><span class="line">        super(YellowPeopleFather, self).eat(&apos;food&apos;)</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>xiaozhang 调用的是 WhitePeopleMother 方法， 正在吃food</p>
+</blockquote>
+<h3 id="调用Person-类-基类-中的-eat-方法"><a href="#调用Person-类-基类-中的-eat-方法" class="headerlink" title="调用Person 类(基类)中的 eat 方法"></a>调用Person 类(基类)中的 eat 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class son(YellowPeopleFather, WhitePeopleMother):</span><br><span class="line">    def eat(self, food):</span><br><span class="line">        super(WhitePeopleMother, self).eat(&apos;food&apos;)</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>xiaozhang 调用的是 Person 方法，正在吃food</p>
+</blockquote>
+<p>总结：super调用的本质是调用MRO顺序的下一个类，</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/26/创建对象类实例属性方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/26/创建对象类实例属性方法/" itemprop="url">创建对象类实例属性方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-26T10:57:43+08:00">
+                2019-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/26/创建对象类实例属性方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/26/创建对象类实例属性方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>面向对象: 有一句话是这么说的：“世间万物，皆为对象”</p>
+<h1 id="对象实例化首先调用init进行初始化"><a href="#对象实例化首先调用init进行初始化" class="headerlink" title="对象实例化首先调用init进行初始化"></a><strong>对象实例化首先调用<strong>init</strong>进行初始化</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 对象实例化首先调用__init__进行初始化</span><br><span class="line"># self: 实例本身, name、age: 类属性，实例属性</span><br><span class="line">class Person:</span><br><span class="line">    def __init__(self, name, age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"># 这里的self参数就是xiaoming</span><br><span class="line">xiaoming = Person(&apos;小明&apos;, 12)</span><br><span class="line">print(xiaoming.name)</span><br><span class="line">print(xiaoming.age)</span><br><span class="line"># 这里的self参数就是xiaohong</span><br><span class="line">xiaohong = Person(&apos;小红&apos;, 13)</span><br><span class="line">print(xiaohong.name)</span><br><span class="line">print(xiaohong.age)</span><br><span class="line"># 类一定是实例化后才发生作用，不实例不能用里面的属性方法</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小明<br>12<br>小红<br>13</p>
+</blockquote>
+<h1 id="定义共有的变量，在类里面定义"><a href="#定义共有的变量，在类里面定义" class="headerlink" title="定义共有的变量，在类里面定义"></a><strong>定义共有的变量，在类里面定义</strong></h1><p>所有类的实例都可以访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Person:</span><br><span class="line">    attr = &apos;高级智慧&apos;</span><br><span class="line">    def __init__(self, name, age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">xiaoming = Person(&apos;小明&apos;, 12)</span><br><span class="line">xiaohong = Person(&apos;小红&apos;, 13)</span><br><span class="line">print(xiaoming.attr)</span><br><span class="line">print(xiaohong.attr)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>高级智慧<br>高级智慧</p>
+</blockquote>
+<h1 id="定义方法，实现各种功能"><a href="#定义方法，实现各种功能" class="headerlink" title="定义方法，实现各种功能"></a><strong>定义方法，实现各种功能</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Person:</span><br><span class="line">    attr = &apos;高级智慧&apos;</span><br><span class="line">    def __init__(self, name, age):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    def say(self, something):</span><br><span class="line">        return &apos;%s 说 %s&apos; % (self.name, something)</span><br><span class="line"></span><br><span class="line">    def eat(self, food):</span><br><span class="line">        return &apos;&#123;&#125; 吃 &#123;&#125;&apos;.format(self.name, food)</span><br><span class="line"></span><br><span class="line">xiaoming = Person(&apos;小明&apos;, 12)</span><br><span class="line">xiaohong = Person(&apos;小红&apos;, 13)</span><br><span class="line">print(xiaoming.say(&apos;哈哈哈哈哈哈哈哈哈哈哈哈&apos;))</span><br><span class="line">print(xiaohong.eat(&apos;苹果苹果苹果苹果苹果苹果&apos;))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小明 说 哈哈哈哈哈哈哈哈哈哈哈哈<br>小红 吃 苹果苹果苹果苹果苹果苹果</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/string中常用的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/23/string中常用的方法/" itemprop="url">string中常用的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-23T11:19:17+08:00">
+                2019-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/23/string中常用的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/23/string中常用的方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a><strong>查找</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str1 = &apos;天好蓝，太阳好大，学习python的路上好嗨，来来来，不要停。。。&apos;</span><br><span class="line">print(str1.find(&apos;python&apos;)) # 找到返回索引值</span><br><span class="line">print(str1.find(&apos;Python&apos;)) # 找不到返回-1</span><br><span class="line">print(str1[11:17])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>11<br>-1<br>python</p>
+</blockquote>
+<h1 id="替换"><a href="#替换" class="headerlink" title="替换"></a><strong>替换</strong></h1><p>貌似不能改变原字符串，只有新建一个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str2 = str1.replace(&quot;天好蓝&quot;, &quot;好个天&quot;)</span><br><span class="line">print(str2)</span><br><span class="line"># str1还是str1，并没改变</span><br><span class="line">print(str1)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>好个天，太阳好大，学习python的路上好嗨，来来来，不要停。。。<br>天好蓝，太阳好大，学习python的路上好嗨，来来来，不要停。。。</p>
+</blockquote>
+<h1 id="分割"><a href="#分割" class="headerlink" title="分割"></a><strong>分割</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str3 = &apos;9/23/2019 11:46:57 AM&apos;</span><br><span class="line">print(str3.split(&apos; &apos;))</span><br><span class="line">print(str3.split(&apos; &apos;)[0].split(&apos;/&apos;))</span><br><span class="line">print(str3.split(&apos; &apos;)[1].split(&apos;:&apos;))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[‘9/23/2019’, ‘11:46:57’, ‘AM’]<br>[‘9’, ‘23’, ‘2019’]<br>[‘11’, ‘46’, ‘57’]</p>
+</blockquote>
+<h1 id="删除空格"><a href="#删除空格" class="headerlink" title="删除空格"></a><strong>删除空格</strong></h1><p>只能删首位含有空格的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str4 = &apos;                建国 70 周年阅           兵 &apos;</span><br><span class="line">print(str4.strip())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>建国 70 周年阅&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;           兵</p>
+</blockquote>
+<h1 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a><strong>大小写转换</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str5 = &apos;congratulation&apos;</span><br><span class="line">print(str5.upper())</span><br><span class="line">print(str5.lower())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>CONGRATULATION<br>congratulation</p>
+</blockquote>
+<h1 id="判断开头结尾"><a href="#判断开头结尾" class="headerlink" title="判断开头结尾"></a><strong>判断开头结尾</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str6 = &apos;重庆磁器口.jpg&apos;</span><br><span class="line">print(str6.startswith(&apos;重庆&apos;))</span><br><span class="line">print(str6.endswith(&apos;jpg&apos;))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>True<br>True</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/全浸式自由游瞎扎腾/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/22/全浸式自由游瞎扎腾/" itemprop="url">全浸式自由游瞎扎腾</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-22T15:43:40+08:00">
+                2019-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/游泳/" itemprop="url" rel="index">
+                    <span itemprop="name">游泳</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/22/全浸式自由游瞎扎腾/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/22/全浸式自由游瞎扎腾/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.bilibili.com/video/av13026782?from=search&seid=10124078805547539835" target="_blank" rel="noopener">鱼式游泳自学教室（全浸式自由泳）</a></p>
+<h1 id="超人漂浮"><a href="#超人漂浮" class="headerlink" title="超人漂浮"></a><strong>超人漂浮</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=1" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=1</a>)<br>轻松有效的超人打腿，安静、轻松、悠闲，腿不下沉即可<br>放松头部，双臂与肩同宽，体会无重状态<br>这里有个双臂同时回收到大腿的动作，总做不好！！！<br>一收双臂感觉身体是上浮，而前进得很少，<br>技巧：往后划，平行于水面，转体后加速划？</p>
+<h1 id="滑行"><a href="#滑行" class="headerlink" title="滑行"></a><strong>滑行</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=2" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=2</a>)<br>一手前伸，一手贴大腿，转体，一侧肩膀露出水面，不划手只打腿滑行<br>体会平衡感觉，<br>体会转体过渡带来的失衡下沉感觉<br>体会重心转移带来的前进力量，<br>转体后一边肩膀露出水面，头部放松不转动<br>左右都转，体会双臂似两条轨道的感觉</p>
+<h1 id="换气"><a href="#换气" class="headerlink" title="换气"></a><strong>换气</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=3" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=3</a>)<br>不划手：<br>旋转身体换气，仰躺<br>向上转体，身体先转，头后转，向下则同时转<br>多练习一手臂在前，一手贴于大腿滑行换气的动作<br>划手：<br>要在滑行中换气，手划完的时候，不要边划手边换气，这样容易成下压换气的错误动作<br>换气前后都要先滑行，换完气后先滑行再划下次手<br>用1、2、3节奏，这样两边都可以练习到</p>
+<h1 id="水下换手"><a href="#水下换手" class="headerlink" title="水下换手"></a><strong>水下换手</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=4" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=4</a>)<br>换手时不出水面，手在头侧的位置停留检查，记住这个位置，然后换手，<br>做好的体会重心转移带来的前进力量，让你不费力前进<br>体会屁股发力带动手臂前伸，而非用力推水身后，<br>体会前伸把手掷向目标的感觉</p>
+<h1 id="整合1-4节"><a href="#整合1-4节" class="headerlink" title="整合1-4节"></a><strong>整合1-4节</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=5" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=5</a>)<br>水下换手，连续换气<br>水下连续换手，全泳</p>
+<h1 id="摇臂"><a href="#摇臂" class="headerlink" title="摇臂"></a><strong>摇臂</strong></h1><p>(<a href="https://www.bilibili.com/video/av13026782/?p=6" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=6</a>)<br>高肘<br>小臂放松不紧绷，<br>手在水中不出水面<br>体会木偶小臂，这要关闭小臂肌肉</p>
+<h1 id="加强练习"><a href="#加强练习" class="headerlink" title="加强练习"></a><strong>加强练习</strong></h1><p>三次水下换手<br>换气滑行<br>三次摇臂换手<br>换气滑行<br>全泳<br>单臂划手换气练习<br>(<a href="https://www.bilibili.com/video/av13026782/?p=7" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=7</a>)<br>(<a href="https://www.bilibili.com/video/av13026782/?p=8" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=8</a>)<br>(<a href="https://www.bilibili.com/video/av13026782/?p=9" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=9</a>)</p>
+<h1 id="两拍打水"><a href="#两拍打水" class="headerlink" title="两拍打水"></a><strong>两拍打水</strong></h1><p>水下换手、摇臂换手结合两拍打水<br>一下一下的打腿，打腿角度略加大，能强烈感觉打水将手送至目标定位的力量，<br>体会全身连接的舒畅力量输出前进的感觉<br>(<a href="https://www.bilibili.com/video/av13026782/?p=10" target="_blank" rel="noopener">https://www.bilibili.com/video/av13026782/?p=10</a>)</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/列表元组字典集合的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/列表元组字典集合的用法/" itemprop="url">列表元组字典集合的用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T14:55:01+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/21/列表元组字典集合的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/21/列表元组字典集合的用法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong>列表</strong></h1><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = [</span><br><span class="line">    &apos;黄鹤楼(软珍品)&apos;, &apos;中南海(硬酷爽风尚)&apos;, &apos;双喜(软经典)&apos;,</span><br><span class="line">    &apos;中南海(典8)&apos;, &apos;蒙特二号10支装&apos;, &apos;红双喜大喜&apos;,</span><br><span class="line">    &apos;高希霸世纪二25支装&apos;, &apos;长白山(777)&apos;, &apos;黄金叶(乐途)&apos;,</span><br><span class="line">    &apos;中南海(京韵细支烤烟)&apos;, &apos;钻石(经典纯和)&apos;, &apos;钻石(细支尚风)&apos;,</span><br><span class="line">    &apos;中南海(典5)&apos;, &apos;黄鹤楼(硬15细支)&apos;, &apos;黄鹤楼(硬圣火)&apos;,</span><br><span class="line">    &apos;双喜(国喜细支)&apos;, &apos;钻石(硬蓝)&apos;, &apos;钻石(一品荷花)&apos;,</span><br><span class="line">    &apos;双喜(大国喜)&apos;, &apos;钻石(细支荷花)&apos;, &apos;云烟(清甜香)&apos;,</span><br><span class="line">    &apos;黄鹤楼(软蓝)&apos;, &apos;利群(休闲云端)&apos;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># 查</span><br><span class="line"># 列表索引从0开始，程序员都知道</span><br><span class="line">print(tobaccos[0])</span><br><span class="line">print(tobaccos[1])</span><br><span class="line"># 从索引0开始的5-0=5个，不是指向索引5：</span><br><span class="line">print(tobaccos[0:5])</span><br><span class="line"># 从索引2开始的5-2=3个，不是指向索引5：</span><br><span class="line">print(tobaccos[2:5])</span><br><span class="line">print(tobaccos[-1])</span><br><span class="line"># 从第0个到尾：</span><br><span class="line">print(tobaccos[0:])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>黄鹤楼(软珍品)<br>中南海(硬酷爽风尚)<br>[‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’]<br>[‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’]<br>利群(休闲云端)<br>[‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’, ‘高希霸世纪二25支装’, ‘长白山(777)’, ‘黄金叶(乐途)’, ‘中南海(京韵细支烤烟)’, ‘钻石(经典纯和)’, ‘钻石(细支尚风)’, ‘中南海(典5)’, ‘黄鹤楼(硬15细支)’, ‘黄鹤楼(硬圣火)’, ‘双喜(国喜细支)’, ‘钻石(硬蓝)’, ‘钻石(一品荷花)’, ‘双喜(大国喜)’, ‘钻石(细支荷花)’, ‘云烟(清甜香)’, ‘黄鹤楼(软蓝)’, ‘利群(休闲云端)’]</p>
+</blockquote>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[-1] = &apos;吸烟有害健康&apos;</span><br><span class="line">print(tobaccos[-1])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>吸烟有害健康</p>
+</blockquote>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 按索引删</span><br><span class="line">del tobaccos[0]</span><br><span class="line"># 直接删除,判断一下元素是否在列表中</span><br><span class="line">if &apos;蒙特二号10支装&apos; in tobaccos:</span><br><span class="line">    tobaccos.remove(&apos;蒙特二号10支装&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 指定索引位置插入</span><br><span class="line">tobaccos.insert(0, &apos;中华(硬)&apos;)</span><br><span class="line"># 在末尾新增</span><br><span class="line">tobaccos.append(&apos;玉溪(软)&apos;)</span><br><span class="line">print(tobaccos[0:5])</span><br><span class="line">print(tobaccos[-1])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[‘中华(硬)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘红双喜大喜’]<br>玉溪(软)</p>
+</blockquote>
+<h2 id="对列表的常用操作"><a href="#对列表的常用操作" class="headerlink" title="对列表的常用操作"></a>对列表的常用操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(len(tobaccos))</span><br><span class="line">print(tobaccos.index(&apos;利群(休闲云端)&apos;))</span><br><span class="line"># 反向元素，后变前，前变后</span><br><span class="line"># 这里直接打印为什么返回None?</span><br><span class="line">print(tobaccos.reverse())</span><br><span class="line">print(tobaccos)</span><br><span class="line"># 移除最后一个元素并返回它</span><br><span class="line">print(tobaccos.pop())</span><br><span class="line">print(len(tobaccos))</span><br><span class="line"># 清空列表</span><br><span class="line">tobaccos.clear()</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>23<br>22<br>None<br>[‘利群(休闲云端)’, ‘黄鹤楼(软蓝)’, ‘云烟(清甜香)’, ‘钻石(细支荷花)’, ‘双喜(大国喜)’, ‘钻石(一品荷花)’, ‘钻石(硬蓝)’, ‘双喜(国喜细支)’, ‘黄鹤楼(硬圣火)’, ‘黄鹤楼(硬15细支)’, ‘中南海(典5)’, ‘钻石(细支尚风)’, ‘钻石(经典纯和)’, ‘中南海(京韵细支烤烟)’, ‘黄金叶(乐途)’, ‘长白山(777)’, ‘高希霸世纪二25支装’, ‘红双喜大喜’, ‘蒙特二号10支装’, ‘中南海(典8)’, ‘双喜(软经典)’, ‘中南海(硬酷爽风尚)’, ‘黄鹤楼(软珍品)’]<br>黄鹤楼(软珍品)<br>22<br>[]</p>
+</blockquote>
+<h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a><strong>元组</strong></h1><p>元组tuple用()表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = (</span><br><span class="line">    &apos;黄鹤楼(软珍品)&apos;, &apos;中南海(硬酷爽风尚)&apos;, &apos;双喜(软经典)&apos;,</span><br><span class="line">    &apos;中南海(典8)&apos;, &apos;蒙特二号10支装&apos;, &apos;红双喜大喜&apos;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查-1"><a href="#查-1" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos[0])</span><br><span class="line">print(tobaccos[1:5])</span><br><span class="line">print(tobaccos[-1])</span><br><span class="line">print(tobaccos[0:])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>黄鹤楼(软珍品)<br>(‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’)<br>红双喜大喜<br>(‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’)</p>
+</blockquote>
+<h2 id="改-1"><a href="#改-1" class="headerlink" title="改"></a>改</h2><p>元组不可变，不能如列表这样随意更改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[0] = &apos;中华&apos;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘tuple’ object does not support item assignment</p>
+</blockquote>
+<h2 id="删-1"><a href="#删-1" class="headerlink" title="删"></a>删</h2><p>也不能像列表那样删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos[0]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘tuple’ object doesn’t support item deletion</p>
+</blockquote>
+<p>但可以删除整个元组渣都不剩！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos</span><br></pre></td></tr></table></figure>
+
+<h2 id="增-1"><a href="#增-1" class="headerlink" title="增"></a>增</h2><p>元组也不具备列表insert、append两个增加方法<br>如硬要增加只能这样再搞个元组 + 合并进去,注意那个逗号,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newtuple = (&apos;中华&apos;,) + tobaccos</span><br><span class="line">print(newtuple)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(‘中华’, ‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’,<br>‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’)</p>
+</blockquote>
+<h2 id="列表与元组怎样选择，怎样转换"><a href="#列表与元组怎样选择，怎样转换" class="headerlink" title="列表与元组怎样选择，怎样转换"></a>列表与元组怎样选择，怎样转换</h2><p>列表和元组里面都可以任意存储不同类型的数据<br>int、float、string杂食不会消化不良<br>列表主要用来存储经常需要变动的数据<br>元组可存储：坐标数据，地理位置的经纬度等不会变化的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">my_list = [(&apos;中华(硬)&apos;, 381.6, 450)]</span><br><span class="line"></span><br><span class="line"># 查看内存占用情况，使用 __sizeof__() 来获取</span><br><span class="line">print(my_list.__sizeof__())</span><br><span class="line"># 增加元素后内存占用由24增加为40</span><br><span class="line">my_list.append((&apos;天子(软黄)&apos;, 392.2, 450))</span><br><span class="line">print(my_list)</span><br><span class="line">print(my_list.__sizeof__())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>24<br>[(‘中华(硬)’, 381.6, 450), (‘天子(软黄)’, 392.2, 450)]<br>40</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_list = [1, 2, 3, 4, 5]</span><br><span class="line">my_tuple = tuple(my_list)</span><br><span class="line">print(my_tuple)</span><br><span class="line">my_list = list(my_tuple)</span><br><span class="line">print(my_list)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(1, 2, 3, 4, 5)<br>[1, 2, 3, 4, 5]</p>
+</blockquote>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a><strong>字典</strong></h1><p>字典里面的元素是由 key : value 键值对组成<br>键key不可重复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = &#123;&apos;品名&apos;: &apos;中华(硬)&apos;, &apos;批发价&apos;: 381.6,&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查-2"><a href="#查-2" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos)</span><br><span class="line">print(tobaccos[&apos;品名&apos;])</span><br><span class="line">print(tobaccos[&apos;批发价&apos;])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(硬)’, ‘批发价’: 381.6}<br>中华(硬)<br>381.6</p>
+</blockquote>
+<h2 id="改-2"><a href="#改-2" class="headerlink" title="改"></a>改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[&apos;品名&apos;] = &apos;中华(软)&apos;</span><br><span class="line">tobaccos[&apos;批发价&apos;] = 583</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’, ‘批发价’: 583}</p>
+</blockquote>
+<h2 id="删-2"><a href="#删-2" class="headerlink" title="删"></a>删</h2><p>指定键key删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos[&apos;批发价&apos;]</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’}<br>清空字典：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos.clear()</span><br></pre></td></tr></table></figure>
+
+<p>删除字典：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos</span><br></pre></td></tr></table></figure>
+
+<h2 id="增-2"><a href="#增-2" class="headerlink" title="增"></a>增</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 增</span><br><span class="line">tobaccos[&apos;焦油量&apos;] = 11.0</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’, ‘批发价’: 583, ‘焦油量’: 11.0}</p>
+</blockquote>
+<h2 id="字典和列表以及元组之间的转换"><a href="#字典和列表以及元组之间的转换" class="headerlink" title="字典和列表以及元组之间的转换"></a>字典和列表以及元组之间的转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos.keys())</span><br><span class="line">print(tobaccos.values())</span><br><span class="line"># 将字典中的键值对分别转换成一个一个的元组，再由这些元组组成列表</span><br><span class="line">print(tobaccos.items())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>dict_keys([‘品名’, ‘批发价’, ‘焦油量’])<br>dict_values([‘中华(软)’, 583, 11.0])<br>dict_items([(‘品名’, ‘中华(软)’), (‘批发价’, 583), (‘焦油量’, 11.0)])</p>
+</blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a><strong>集合</strong></h1><p>集合set本质是一种hash，具有唯一、无序、不可重复性<br>虽然也用花括号表示，但没有字典的键值对概念，就是个集合而也</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line"># 元组转集合</span><br><span class="line">b = set((1, 2, 3, 4, 5))</span><br><span class="line">print(b)</span><br><span class="line"># 列表转集合</span><br><span class="line">b = set([1, 2, 3, 4, 5])</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5}<br>{1, 2, 3, 4, 5}</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 自动去重值</span><br><span class="line">c = &#123;1, 1, 1, 2, 2, 2, 3, 3, 3&#125;</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3}</p>
+</blockquote>
+<h2 id="查-3"><a href="#查-3" class="headerlink" title="查"></a>查</h2><p>判断元素在不在集合中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line">print(1 in a)</span><br><span class="line">print(4 in a)</span><br><span class="line">print(4 not in a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>True<br>False<br>True</p>
+</blockquote>
+<h2 id="增-add方法"><a href="#增-add方法" class="headerlink" title="增 add方法"></a>增 add方法</h2><p>set可以存放字符串，数字和元组，不能存放列表[]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a.add(4)</span><br><span class="line">print(a)</span><br><span class="line">a.add((5, 6, 7))</span><br><span class="line">print(a)</span><br><span class="line">a.add(&apos;数学概念集合&apos;)</span><br><span class="line">print(a)</span><br><span class="line"># 不能增加列表</span><br><span class="line"># a.add([8, 9])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4}<br>{1, 2, 3, 4, (5, 6, 7)}<br>{1, 2, 3, 4, (5, 6, 7), ‘数学概念集合’}</p>
+</blockquote>
+<h2 id="追加update"><a href="#追加update" class="headerlink" title="追加update"></a>追加update</h2><p>可传入列表、元组、集合追加<br>这比add方法好用啊<br>可以看到其中追加的字符串的打印结果是无序状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line">a.update([4, 5, &apos;列表&apos;])</span><br><span class="line">a.update((6, 7, &apos;元组&apos;))</span><br><span class="line">a.update(&#123;8, 9, &apos;集合&apos;&#125;)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, ‘列表’, 6, 7, 8, 9, ‘元组’, ‘集合’}</p>
+</blockquote>
+<h2 id="删-3"><a href="#删-3" class="headerlink" title="删"></a>删</h2><p>remove方法：元素不存在要报错<br>discard方法：即使元素不存在也不报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3, 4, 5, 6, 7, 8, 9, 10, &apos;test&apos;&#125;</span><br><span class="line">a.remove(&apos;test&apos;)</span><br><span class="line">print(a)</span><br><span class="line">a.discard(10)</span><br><span class="line">a.discard(10)</span><br><span class="line">print(a)</span><br><span class="line">a.clear()</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}<br>{1, 2, 3, 4, 5, 6, 7, 8, 9}<br>set()</p>
+</blockquote>
+<h2 id="并集交集子集父集"><a href="#并集交集子集父集" class="headerlink" title="并集交集子集父集"></a>并集交集子集父集</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3, 4&#125;</span><br><span class="line">b = &#123;3, 4, 5, 6&#125;</span><br><span class="line">print(a.union(b))</span><br><span class="line">print(a.intersection(b))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, 6}<br>{3, 4}</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c = &#123;7, 8&#125;</span><br><span class="line">d = &#123;7, 8, 9, 10&#125;</span><br><span class="line"># 判断c集合是否为d集合的子集</span><br><span class="line">print(c.issubset(d))</span><br><span class="line"># 判断d集合是否为c集合的父集</span><br><span class="line">print(d.issuperset(c))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>True<br>True</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/20/快速认识Python中的字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/20/快速认识Python中的字符串/" itemprop="url">快速认识Python中的字符串</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-20T15:36:38+08:00">
+                2019-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/20/快速认识Python中的字符串/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/20/快速认识Python中的字符串/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="字符串本质是一种类似于列表的数据结构"><a href="#字符串本质是一种类似于列表的数据结构" class="headerlink" title="字符串本质是一种类似于列表的数据结构"></a><strong>字符串本质是一种类似于列表的数据结构</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str = &apos;Congratulation&apos;</span><br><span class="line">print(str[0])</span><br><span class="line">print(str[1])</span><br><span class="line">print(str[-1])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>C<br>o<br>n</p>
+</blockquote>
+<p>用单引号’、双引号’’、三引号’’’表示字符串，<br>也可以嵌套使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = &quot;I&apos;m Jack&quot;</span><br><span class="line">print(str)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>I’m Jack</p>
+</blockquote>
+<h1 id="字符串中需要换行等需要用到转义字符："><a href="#字符串中需要换行等需要用到转义字符：" class="headerlink" title="字符串中需要换行等需要用到转义字符：\"></a><strong>字符串中需要换行等需要用到转义字符：\</strong></h1><p>表示单引号： &#39;<br>表示双引号： &quot;<br>表示换行： \n<br>表示tab： \t<br>表示回车： \r<br>表示退格：\b<br>表示空格：直接就敲空格，不是所有字符都有转义的,空格没有转义字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">str = &apos;请问你有多帅？\n我想爆裂的镜子已经给出了答案！\n&apos;</span><br><span class="line">str1 = &apos;法朗士：\&quot;读书是灵魂的壮游，\n\t\t随时可发现名山巨川、古迹名胜、\n\t\t深林幽谷、奇花异卉。\&quot;&apos;</span><br><span class="line">print(str)</span><br><span class="line">print(str1)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>请问你有多帅？<br>我想爆裂的镜子已经给出了答案！</p>
+</blockquote>
+<blockquote>
+<p>法朗士：”读书是灵魂的壮游，<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        随时可发现名山巨川、古迹名胜、<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        深林幽谷、奇花异卉。”</p>
+</blockquote>
+<h1 id="用r前缀可忽略转义符-用于不需要转义直接打印-n-t的场景"><a href="#用r前缀可忽略转义符-用于不需要转义直接打印-n-t的场景" class="headerlink" title="用r前缀可忽略转义符,用于不需要转义直接打印\n\t的场景"></a><strong>用r前缀可忽略转义符,用于不需要转义直接打印\n\t的场景</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str = r&apos;天行健，君子以自强不息！\n\t\r\b&apos;</span><br><span class="line">print(str)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>天行健，君子以自强不息！\n\t\r\b</p>
+</blockquote>
+<h1 id="使用-号进行字符串的拼接"><a href="#使用-号进行字符串的拼接" class="headerlink" title="使用+号进行字符串的拼接"></a><strong>使用+号进行字符串的拼接</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str0 = &apos;《周易》曰：\n&apos;</span><br><span class="line">str1 = &apos; 天行健，君子以自强不息；\n&apos;</span><br><span class="line">str2 = &apos; 地势坤，君子以厚德载物。&apos;</span><br><span class="line">str0 += str1 + str2</span><br><span class="line">print(str0)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>《周易》曰：<br> 天行健，君子以自强不息；<br> 地势坤，君子以厚德载物。</p>
+</blockquote>
+<h1 id="神奇的乘号-，快速生成相同字符"><a href="#神奇的乘号-，快速生成相同字符" class="headerlink" title="神奇的乘号*，快速生成相同字符"></a><strong>神奇的乘号*，快速生成相同字符</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;❤&apos; * 9)</span><br><span class="line">print(&apos;\n&apos;.join([&apos;&apos;.join([(&apos;520&apos;[(x-y) % len(&apos;520&apos;)] if ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 &lt;= 0else&apos; &apos;) for x in range(-30, 30)]) for y in range(30, -30, -1)]))</span><br></pre></td></tr></table></figure>
+
+<p>❤❤❤❤❤❤❤❤❤<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                205205205&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;           520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;            20520520520520520&ensp;&ensp;&ensp;   52052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;          52052052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;         5205205205205205205205205205205205205205205<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        520520520520520520520520520520520520520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        205205205205205205205205205205205205205205205<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        052052052052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        520520520520520520520520520520520520520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        205205205205205205205205205205205205205205205<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;        052052052052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;         2052052052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;          52052052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;          20520520520520520520520520520520520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;            2052052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;             52052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;              052052052052052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                05205205205205205205205205205<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                  0520520520520520520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                    052052052052052052052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                       520520520520520<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                          205205205<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                             052<br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;                              2                   </p>
+<h1 id="字符串的格式化"><a href="#字符串的格式化" class="headerlink" title="字符串的格式化"></a><strong>字符串的格式化</strong></h1><p>%s:字符格式化<br>%d:整型格式化<br>.format()：万能格式化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;世界上第一台通用计算机&quot;%s&quot;于%d年在美国宾夕法尼亚大学诞生。&apos; % (&apos;ENIAC&apos;, 1946))</span><br><span class="line">print(&apos;世界上第一台通用计算机&quot;&#123;name&#125;&quot;于&#123;year&#125;年在美国宾夕法尼亚大学诞生。&apos;.format(name=&apos;ENIAC&apos;, year=1946))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>世界上第一台通用计算机”ENIAC”于1946年在美国宾夕法尼亚大学诞生。<br>世界上第一台通用计算机”ENIAC”于1946年在美国宾夕法尼亚大学诞生。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/Python函数中的那些参数的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/17/Python函数中的那些参数的使用/" itemprop="url">Python函数中的那些参数的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-17T11:27:49+08:00">
+                2019-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/17/Python函数中的那些参数的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/17/Python函数中的那些参数的使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是函数参数，快速定义一个函数"><a href="#什么是函数参数，快速定义一个函数" class="headerlink" title="什么是函数参数，快速定义一个函数"></a><strong>什么是函数参数，快速定义一个函数</strong></h1><p>所谓参数，就是我们在定义这个函数的时候，可以接收一些“变量”来操作，<br>比如我们定义一个求和的函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def get_sum(a, b):</span><br><span class="line">    sum = a + b</span><br><span class="line">    return sum</span><br><span class="line"></span><br><span class="line">print(get_sum(3, 4))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>这里的 a 和 b 就是 get_sum 这个函数的参数，<br>那么当我们需要求和的时候，只需要将我们要求和的数传进去就行了：<br>这就是函数中最简单的参数使用。</p>
+<h1 id="参数是一个列表"><a href="#参数是一个列表" class="headerlink" title="参数是一个列表"></a><strong>参数是一个列表</strong></h1><p>修改列表，传入列表参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def change_list(list):</span><br><span class="line">    list[1] = &apos;python&apos;</span><br><span class="line"></span><br><span class="line">mylist = [1, 2, 3, 4]</span><br><span class="line">change_list(mylist)</span><br><span class="line">print(mylist)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1, ‘python’, 3, 4]</p>
+</blockquote>
+<p>直接传入列表参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def change_list(list):</span><br><span class="line">    list = [1, &apos;python&apos;, 3, 4]</span><br><span class="line">    print(list)</span><br><span class="line">change_list(list = [1, 2, 3, 4])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[1, ‘python’, 3, 4]</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def change_list(list):</span><br><span class="line">    list = [1, &apos;python&apos;, 3, 4]</span><br><span class="line">    print(list)</span><br><span class="line">change_list([])</span><br></pre></td></tr></table></figure>
+
+<p>有参数的函数在调用时必须传入参数</p>
+<p>调用函数时指定参数名，这样就不用考虑参数的顺序了<br>如不写参数名，则按函数参数顺序传入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def print_some(length, age):</span><br><span class="line">    print(&apos;年龄：&apos;, age)</span><br><span class="line">    print(&apos;长度：&apos;, length)</span><br><span class="line"></span><br><span class="line">print_some(age=40, length=18)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>年龄： 40<br>长度： 18</p>
+</blockquote>
+<h1 id="参数的一些别样用法"><a href="#参数的一些别样用法" class="headerlink" title="参数的一些别样用法"></a><strong>参数的一些别样用法</strong></h1><h2 id="传入多个参数"><a href="#传入多个参数" class="headerlink" title="传入多个参数"></a><strong>传入多个参数</strong></h2><p>在参数名称的前面添加星号，表示这个位置的参数可以是多个，<br>比如这里我们定义可以传入多个 age：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def print_some(length, *age):</span><br><span class="line">    print(&apos;年龄：&apos;, *age)</span><br><span class="line">    print(age)</span><br><span class="line">    print(&apos;长度：&apos;, length)</span><br><span class="line"></span><br><span class="line">print_some(18, 1, 2, 3, 4, 5, 6, 7, 8)</span><br></pre></td></tr></table></figure>
+
+<p>函数中的参数，如果在前面加一颗星, 那么这个参数可以接收多个，并且最后都转化成元组。</p>
+<blockquote>
+<p>年龄： 1 2 3 4 5 6 7 8<br>(1, 2, 3, 4, 5, 6, 7, 8)<br>长度： 18</p>
+</blockquote>
+<h2 id="传入字典参数"><a href="#传入字典参数" class="headerlink" title="传入字典参数"></a><strong>传入字典参数</strong></h2><p>如果用两个星的字典参数，在调用的时候必须要用字典的形式写明每个参数<br>返回结果也是字典形式数据结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def print_some(length, **age):</span><br><span class="line">    print(&apos;年龄：&apos;, age)</span><br><span class="line">    print(&apos;长度：&apos;, length)</span><br><span class="line"></span><br><span class="line">print_some(length=18, age1=1, age2=2, age3=3, age4=4, age5=5)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>年龄： {‘age1’: 1, ‘age2’: 2, ‘age3’: 3, ‘age4’: 4, ‘age5’: 5}<br>长度： 18</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

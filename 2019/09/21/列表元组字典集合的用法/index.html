@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="列表,元组,字典,集合,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="列表查12345678910111213141516171819202122tobaccos = [    &amp;apos;黄鹤楼(软珍品)&amp;apos;, &amp;apos;中南海(硬酷爽风尚)&amp;apos;, &amp;apos;双喜(软经典)&amp;apos;,    &amp;apos;中南海(典8)&amp;apos;, &amp;apos;蒙特二号10支装&amp;apos;, &amp;apos;红双喜大喜&amp;apos;,    &amp;apos;高希霸世纪">
+<meta name="keywords" content="列表,元组,字典,集合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="列表元组字典集合的用法">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/列表元组字典集合的用法/index.html">
+<meta property="og:site_name" content="Coding Python">
+<meta property="og:description" content="列表查12345678910111213141516171819202122tobaccos = [    &amp;apos;黄鹤楼(软珍品)&amp;apos;, &amp;apos;中南海(硬酷爽风尚)&amp;apos;, &amp;apos;双喜(软经典)&amp;apos;,    &amp;apos;中南海(典8)&amp;apos;, &amp;apos;蒙特二号10支装&amp;apos;, &amp;apos;红双喜大喜&amp;apos;,    &amp;apos;高希霸世纪">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-09-22T03:29:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="列表元组字典集合的用法">
+<meta name="twitter:description" content="列表查12345678910111213141516171819202122tobaccos = [    &amp;apos;黄鹤楼(软珍品)&amp;apos;, &amp;apos;中南海(硬酷爽风尚)&amp;apos;, &amp;apos;双喜(软经典)&amp;apos;,    &amp;apos;中南海(典8)&amp;apos;, &amp;apos;蒙特二号10支装&amp;apos;, &amp;apos;红双喜大喜&amp;apos;,    &amp;apos;高希霸世纪">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/21/列表元组字典集合的用法/">
+
+
+
+
+
+  <title>列表元组字典集合的用法 | Coding Python</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Coding Python</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">无尽</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/列表元组字典集合的用法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">列表元组字典集合的用法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T14:55:01+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python入门/" itemprop="url" rel="index">
+                    <span itemprop="name">Python入门</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/21/列表元组字典集合的用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/21/列表元组字典集合的用法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a><strong>列表</strong></h1><h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = [</span><br><span class="line">    &apos;黄鹤楼(软珍品)&apos;, &apos;中南海(硬酷爽风尚)&apos;, &apos;双喜(软经典)&apos;,</span><br><span class="line">    &apos;中南海(典8)&apos;, &apos;蒙特二号10支装&apos;, &apos;红双喜大喜&apos;,</span><br><span class="line">    &apos;高希霸世纪二25支装&apos;, &apos;长白山(777)&apos;, &apos;黄金叶(乐途)&apos;,</span><br><span class="line">    &apos;中南海(京韵细支烤烟)&apos;, &apos;钻石(经典纯和)&apos;, &apos;钻石(细支尚风)&apos;,</span><br><span class="line">    &apos;中南海(典5)&apos;, &apos;黄鹤楼(硬15细支)&apos;, &apos;黄鹤楼(硬圣火)&apos;,</span><br><span class="line">    &apos;双喜(国喜细支)&apos;, &apos;钻石(硬蓝)&apos;, &apos;钻石(一品荷花)&apos;,</span><br><span class="line">    &apos;双喜(大国喜)&apos;, &apos;钻石(细支荷花)&apos;, &apos;云烟(清甜香)&apos;,</span><br><span class="line">    &apos;黄鹤楼(软蓝)&apos;, &apos;利群(休闲云端)&apos;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># 查</span><br><span class="line"># 列表索引从0开始，程序员都知道</span><br><span class="line">print(tobaccos[0])</span><br><span class="line">print(tobaccos[1])</span><br><span class="line"># 从索引0开始的5-0=5个，不是指向索引5：</span><br><span class="line">print(tobaccos[0:5])</span><br><span class="line"># 从索引2开始的5-2=3个，不是指向索引5：</span><br><span class="line">print(tobaccos[2:5])</span><br><span class="line">print(tobaccos[-1])</span><br><span class="line"># 从第0个到尾：</span><br><span class="line">print(tobaccos[0:])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>黄鹤楼(软珍品)<br>中南海(硬酷爽风尚)<br>[‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’]<br>[‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’]<br>利群(休闲云端)<br>[‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’, ‘高希霸世纪二25支装’, ‘长白山(777)’, ‘黄金叶(乐途)’, ‘中南海(京韵细支烤烟)’, ‘钻石(经典纯和)’, ‘钻石(细支尚风)’, ‘中南海(典5)’, ‘黄鹤楼(硬15细支)’, ‘黄鹤楼(硬圣火)’, ‘双喜(国喜细支)’, ‘钻石(硬蓝)’, ‘钻石(一品荷花)’, ‘双喜(大国喜)’, ‘钻石(细支荷花)’, ‘云烟(清甜香)’, ‘黄鹤楼(软蓝)’, ‘利群(休闲云端)’]</p>
+</blockquote>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[-1] = &apos;吸烟有害健康&apos;</span><br><span class="line">print(tobaccos[-1])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>吸烟有害健康</p>
+</blockquote>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 按索引删</span><br><span class="line">del tobaccos[0]</span><br><span class="line"># 直接删除,判断一下元素是否在列表中</span><br><span class="line">if &apos;蒙特二号10支装&apos; in tobaccos:</span><br><span class="line">    tobaccos.remove(&apos;蒙特二号10支装&apos;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 指定索引位置插入</span><br><span class="line">tobaccos.insert(0, &apos;中华(硬)&apos;)</span><br><span class="line"># 在末尾新增</span><br><span class="line">tobaccos.append(&apos;玉溪(软)&apos;)</span><br><span class="line">print(tobaccos[0:5])</span><br><span class="line">print(tobaccos[-1])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[‘中华(硬)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘红双喜大喜’]<br>玉溪(软)</p>
+</blockquote>
+<h2 id="对列表的常用操作"><a href="#对列表的常用操作" class="headerlink" title="对列表的常用操作"></a>对列表的常用操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(len(tobaccos))</span><br><span class="line">print(tobaccos.index(&apos;利群(休闲云端)&apos;))</span><br><span class="line"># 反向元素，后变前，前变后</span><br><span class="line"># 这里直接打印为什么返回None?</span><br><span class="line">print(tobaccos.reverse())</span><br><span class="line">print(tobaccos)</span><br><span class="line"># 移除最后一个元素并返回它</span><br><span class="line">print(tobaccos.pop())</span><br><span class="line">print(len(tobaccos))</span><br><span class="line"># 清空列表</span><br><span class="line">tobaccos.clear()</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>23<br>22<br>None<br>[‘利群(休闲云端)’, ‘黄鹤楼(软蓝)’, ‘云烟(清甜香)’, ‘钻石(细支荷花)’, ‘双喜(大国喜)’, ‘钻石(一品荷花)’, ‘钻石(硬蓝)’, ‘双喜(国喜细支)’, ‘黄鹤楼(硬圣火)’, ‘黄鹤楼(硬15细支)’, ‘中南海(典5)’, ‘钻石(细支尚风)’, ‘钻石(经典纯和)’, ‘中南海(京韵细支烤烟)’, ‘黄金叶(乐途)’, ‘长白山(777)’, ‘高希霸世纪二25支装’, ‘红双喜大喜’, ‘蒙特二号10支装’, ‘中南海(典8)’, ‘双喜(软经典)’, ‘中南海(硬酷爽风尚)’, ‘黄鹤楼(软珍品)’]<br>黄鹤楼(软珍品)<br>22<br>[]</p>
+</blockquote>
+<h1 id="元组"><a href="#元组" class="headerlink" title="元组"></a><strong>元组</strong></h1><p>元组tuple用()表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = (</span><br><span class="line">    &apos;黄鹤楼(软珍品)&apos;, &apos;中南海(硬酷爽风尚)&apos;, &apos;双喜(软经典)&apos;,</span><br><span class="line">    &apos;中南海(典8)&apos;, &apos;蒙特二号10支装&apos;, &apos;红双喜大喜&apos;,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="查-1"><a href="#查-1" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos[0])</span><br><span class="line">print(tobaccos[1:5])</span><br><span class="line">print(tobaccos[-1])</span><br><span class="line">print(tobaccos[0:])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>黄鹤楼(软珍品)<br>(‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’)<br>红双喜大喜<br>(‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’, ‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’)</p>
+</blockquote>
+<h2 id="改-1"><a href="#改-1" class="headerlink" title="改"></a>改</h2><p>元组不可变，不能如列表这样随意更改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[0] = &apos;中华&apos;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘tuple’ object does not support item assignment</p>
+</blockquote>
+<h2 id="删-1"><a href="#删-1" class="headerlink" title="删"></a>删</h2><p>也不能像列表那样删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos[0]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>TypeError: ‘tuple’ object doesn’t support item deletion</p>
+</blockquote>
+<p>但可以删除整个元组渣都不剩！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos</span><br></pre></td></tr></table></figure>
+
+<h2 id="增-1"><a href="#增-1" class="headerlink" title="增"></a>增</h2><p>元组也不具备列表insert、append两个增加方法<br>如硬要增加只能这样再搞个元组 + 合并进去,注意那个逗号,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">newtuple = (&apos;中华&apos;,) + tobaccos</span><br><span class="line">print(newtuple)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(‘中华’, ‘黄鹤楼(软珍品)’, ‘中南海(硬酷爽风尚)’,<br>‘双喜(软经典)’, ‘中南海(典8)’, ‘蒙特二号10支装’, ‘红双喜大喜’)</p>
+</blockquote>
+<h2 id="列表与元组怎样选择，怎样转换"><a href="#列表与元组怎样选择，怎样转换" class="headerlink" title="列表与元组怎样选择，怎样转换"></a>列表与元组怎样选择，怎样转换</h2><p>列表和元组里面都可以任意存储不同类型的数据<br>int、float、string杂食不会消化不良<br>列表主要用来存储经常需要变动的数据<br>元组可存储：坐标数据，地理位置的经纬度等不会变化的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">my_list = [(&apos;中华(硬)&apos;, 381.6, 450)]</span><br><span class="line"></span><br><span class="line"># 查看内存占用情况，使用 __sizeof__() 来获取</span><br><span class="line">print(my_list.__sizeof__())</span><br><span class="line"># 增加元素后内存占用由24增加为40</span><br><span class="line">my_list.append((&apos;天子(软黄)&apos;, 392.2, 450))</span><br><span class="line">print(my_list)</span><br><span class="line">print(my_list.__sizeof__())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>24<br>[(‘中华(硬)’, 381.6, 450), (‘天子(软黄)’, 392.2, 450)]<br>40</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_list = [1, 2, 3, 4, 5]</span><br><span class="line">my_tuple = tuple(my_list)</span><br><span class="line">print(my_tuple)</span><br><span class="line">my_list = list(my_tuple)</span><br><span class="line">print(my_list)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(1, 2, 3, 4, 5)<br>[1, 2, 3, 4, 5]</p>
+</blockquote>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a><strong>字典</strong></h1><p>字典里面的元素是由 key : value 键值对组成<br>键key不可重复</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos = &#123;&apos;品名&apos;: &apos;中华(硬)&apos;, &apos;批发价&apos;: 381.6,&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查-2"><a href="#查-2" class="headerlink" title="查"></a>查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos)</span><br><span class="line">print(tobaccos[&apos;品名&apos;])</span><br><span class="line">print(tobaccos[&apos;批发价&apos;])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(硬)’, ‘批发价’: 381.6}<br>中华(硬)<br>381.6</p>
+</blockquote>
+<h2 id="改-2"><a href="#改-2" class="headerlink" title="改"></a>改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tobaccos[&apos;品名&apos;] = &apos;中华(软)&apos;</span><br><span class="line">tobaccos[&apos;批发价&apos;] = 583</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’, ‘批发价’: 583}</p>
+</blockquote>
+<h2 id="删-2"><a href="#删-2" class="headerlink" title="删"></a>删</h2><p>指定键key删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos[&apos;批发价&apos;]</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’}<br>清空字典：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tobaccos.clear()</span><br></pre></td></tr></table></figure>
+
+<p>删除字典：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del tobaccos</span><br></pre></td></tr></table></figure>
+
+<h2 id="增-2"><a href="#增-2" class="headerlink" title="增"></a>增</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 增</span><br><span class="line">tobaccos[&apos;焦油量&apos;] = 11.0</span><br><span class="line">print(tobaccos)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{‘品名’: ‘中华(软)’, ‘批发价’: 583, ‘焦油量’: 11.0}</p>
+</blockquote>
+<h2 id="字典和列表以及元组之间的转换"><a href="#字典和列表以及元组之间的转换" class="headerlink" title="字典和列表以及元组之间的转换"></a>字典和列表以及元组之间的转换</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(tobaccos.keys())</span><br><span class="line">print(tobaccos.values())</span><br><span class="line"># 将字典中的键值对分别转换成一个一个的元组，再由这些元组组成列表</span><br><span class="line">print(tobaccos.items())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>dict_keys([‘品名’, ‘批发价’, ‘焦油量’])<br>dict_values([‘中华(软)’, 583, 11.0])<br>dict_items([(‘品名’, ‘中华(软)’), (‘批发价’, 583), (‘焦油量’, 11.0)])</p>
+</blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a><strong>集合</strong></h1><p>集合set本质是一种hash，具有唯一、无序、不可重复性<br>虽然也用花括号表示，但没有字典的键值对概念，就是个集合而也</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line"># 元组转集合</span><br><span class="line">b = set((1, 2, 3, 4, 5))</span><br><span class="line">print(b)</span><br><span class="line"># 列表转集合</span><br><span class="line">b = set([1, 2, 3, 4, 5])</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5}<br>{1, 2, 3, 4, 5}</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 自动去重值</span><br><span class="line">c = &#123;1, 1, 1, 2, 2, 2, 3, 3, 3&#125;</span><br><span class="line">print(c)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3}</p>
+</blockquote>
+<h2 id="查-3"><a href="#查-3" class="headerlink" title="查"></a>查</h2><p>判断元素在不在集合中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line">print(1 in a)</span><br><span class="line">print(4 in a)</span><br><span class="line">print(4 not in a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>True<br>False<br>True</p>
+</blockquote>
+<h2 id="增-add方法"><a href="#增-add方法" class="headerlink" title="增 add方法"></a>增 add方法</h2><p>set可以存放字符串，数字和元组，不能存放列表[]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a.add(4)</span><br><span class="line">print(a)</span><br><span class="line">a.add((5, 6, 7))</span><br><span class="line">print(a)</span><br><span class="line">a.add(&apos;数学概念集合&apos;)</span><br><span class="line">print(a)</span><br><span class="line"># 不能增加列表</span><br><span class="line"># a.add([8, 9])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4}<br>{1, 2, 3, 4, (5, 6, 7)}<br>{1, 2, 3, 4, (5, 6, 7), ‘数学概念集合’}</p>
+</blockquote>
+<h2 id="追加update"><a href="#追加update" class="headerlink" title="追加update"></a>追加update</h2><p>可传入列表、元组、集合追加<br>这比add方法好用啊<br>可以看到其中追加的字符串的打印结果是无序状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3&#125;</span><br><span class="line">a.update([4, 5, &apos;列表&apos;])</span><br><span class="line">a.update((6, 7, &apos;元组&apos;))</span><br><span class="line">a.update(&#123;8, 9, &apos;集合&apos;&#125;)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, ‘列表’, 6, 7, 8, 9, ‘元组’, ‘集合’}</p>
+</blockquote>
+<h2 id="删-3"><a href="#删-3" class="headerlink" title="删"></a>删</h2><p>remove方法：元素不存在要报错<br>discard方法：即使元素不存在也不报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3, 4, 5, 6, 7, 8, 9, 10, &apos;test&apos;&#125;</span><br><span class="line">a.remove(&apos;test&apos;)</span><br><span class="line">print(a)</span><br><span class="line">a.discard(10)</span><br><span class="line">a.discard(10)</span><br><span class="line">print(a)</span><br><span class="line">a.clear()</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}<br>{1, 2, 3, 4, 5, 6, 7, 8, 9}<br>set()</p>
+</blockquote>
+<h2 id="并集交集子集父集"><a href="#并集交集子集父集" class="headerlink" title="并集交集子集父集"></a>并集交集子集父集</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2, 3, 4&#125;</span><br><span class="line">b = &#123;3, 4, 5, 6&#125;</span><br><span class="line">print(a.union(b))</span><br><span class="line">print(a.intersection(b))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>{1, 2, 3, 4, 5, 6}<br>{3, 4}</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c = &#123;7, 8&#125;</span><br><span class="line">d = &#123;7, 8, 9, 10&#125;</span><br><span class="line"># 判断c集合是否为d集合的子集</span><br><span class="line">print(c.issubset(d))</span><br><span class="line"># 判断d集合是否为c集合的父集</span><br><span class="line">print(d.issuperset(c))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>True<br>True</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/列表/" rel="tag"># 列表</a>
+          
+            <a href="/tags/元组/" rel="tag"># 元组</a>
+          
+            <a href="/tags/字典/" rel="tag"># 字典</a>
+          
+            <a href="/tags/集合/" rel="tag"># 集合</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/20/快速认识Python中的字符串/" rel="next" title="快速认识Python中的字符串">
+                <i class="fa fa-chevron-left"></i> 快速认识Python中的字符串
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/22/全浸式自由游瞎扎腾/" rel="prev" title="全浸式自由游瞎扎腾">
+                全浸式自由游瞎扎腾 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">LST</p>
+              <p class="site-description motion-element" itemprop="description">Python编程学习, 程序化思维提升, 总结</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#列表"><span class="nav-number">1.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查"><span class="nav-number">1.1.</span> <span class="nav-text">查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改"><span class="nav-number">1.2.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删"><span class="nav-number">1.3.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增"><span class="nav-number">1.4.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对列表的常用操作"><span class="nav-number">1.5.</span> <span class="nav-text">对列表的常用操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元组"><span class="nav-number">2.</span> <span class="nav-text">元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查-1"><span class="nav-number">2.1.</span> <span class="nav-text">查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改-1"><span class="nav-number">2.2.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删-1"><span class="nav-number">2.3.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增-1"><span class="nav-number">2.4.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表与元组怎样选择，怎样转换"><span class="nav-number">2.5.</span> <span class="nav-text">列表与元组怎样选择，怎样转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">3.</span> <span class="nav-text">字典</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查-2"><span class="nav-number">3.1.</span> <span class="nav-text">查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改-2"><span class="nav-number">3.2.</span> <span class="nav-text">改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删-2"><span class="nav-number">3.3.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增-2"><span class="nav-number">3.4.</span> <span class="nav-text">增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典和列表以及元组之间的转换"><span class="nav-number">3.5.</span> <span class="nav-text">字典和列表以及元组之间的转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">4.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查-3"><span class="nav-number">4.1.</span> <span class="nav-text">查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增-add方法"><span class="nav-number">4.2.</span> <span class="nav-text">增 add方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#追加update"><span class="nav-number">4.3.</span> <span class="nav-text">追加update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删-3"><span class="nav-number">4.4.</span> <span class="nav-text">删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并集交集子集父集"><span class="nav-number">4.5.</span> <span class="nav-text">并集交集子集父集</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LST</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NHCq9IhbmKjGr6qmlDUWBzG7-gzGzoHsz',
+        appKey: 'lCJYjyt1KpWy3jVat6su83fl',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
