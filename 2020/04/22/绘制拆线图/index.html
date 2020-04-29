@@ -112,7 +112,13 @@
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/polar.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/15.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/boxplot.jpg">
-<meta property="og:updated_time" content="2020-04-29T03:53:12.000Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/16.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/pie.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/17.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/pie2.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/18.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/imshow.jpg">
+<meta property="og:updated_time" content="2020-04-29T08:23:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绘制拆线图">
 <meta name="twitter:description" content="拆线图基础plot方法 1234567891011121314151617181920212223242526272829303132333435363738394041# 导入库import numpy as npimport matplotlib.pyplot as plt# 解决中文乱码问题plt.rcParams[&amp;apos;font.sans-serif&amp;apos;] = [&amp;apos;">
@@ -395,7 +401,7 @@
 <h1 id="面积图基础"><a href="#面积图基础" class="headerlink" title="面积图基础"></a>面积图基础</h1><img src="/2020/04/22/绘制拆线图/11.png">
 <img src="/2020/04/22/绘制拆线图/stackplot.jpg">
 
-<h1 id="树地图基础"><a href="#树地图基础" class="headerlink" title="树地图基础"></a>树地图基础</h1><p>有点像没灵魂的词云图<br>此图要单独安装 pip install squarify 并结合 matplotlib 库使用<br>*不知为什么这个代码只能在交互模式下一条一条的运行，在IDLE或Pycharm中会提示 squarify 库出错 *</p>
+<h1 id="树地图基础"><a href="#树地图基础" class="headerlink" title="树地图基础"></a>树地图基础</h1><p>有点像没灵魂的词云图<br>此图要单独安装 pip install squarify 并结合 matplotlib 库使用<br><strong>*不知为什么这个代码只能在交互模式下一条一条的运行，在IDLE或Pycharm中会提示 squarify 库出错 *</strong></p>
 <blockquote>
 <p>AttributeError: module ‘squarify’ has no attribute ‘plot’</p>
 </blockquote>
@@ -414,6 +420,21 @@
 <img src="/2020/04/22/绘制拆线图/15.png">
 <p>效果如下：</p>
 <img src="/2020/04/22/绘制拆线图/boxplot.jpg">
+
+<h1 id="饼状图基础"><a href="#饼状图基础" class="headerlink" title="饼状图基础"></a>饼状图基础</h1><p>其适用场景自不必多说<br>代码如下：</p>
+<img src="/2020/04/22/绘制拆线图/16.png">
+<p>效果如下：</p>
+<img src="/2020/04/22/绘制拆线图/pie.jpg">
+
+<h1 id="圆环图基础"><a href="#圆环图基础" class="headerlink" title="圆环图基础"></a>圆环图基础</h1><p>在饼状图的基础上调整参数 <strong>wedgeprops</strong> 即可实现圆环图<br>代码如下：</p>
+<img src="/2020/04/22/绘制拆线图/17.png">
+<p>效果如下：</p>
+<img src="/2020/04/22/绘制拆线图/pie2.jpg">
+
+<h1 id="热力图基础"><a href="#热力图基础" class="headerlink" title="热力图基础"></a>热力图基础</h1><p>热力图是将某一事物的响应度反映在图表上，可以快速发现需要重点关注的区域，使用 plt 中的 imshow 方法<br>代码如下：</p>
+<img src="/2020/04/22/绘制拆线图/18.png">
+<p>效果如下：</p>
+<img src="/2020/04/22/绘制拆线图/imshow.jpg">
       
     </div>
     
@@ -600,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拆线图基础"><span class="nav-number">1.</span> <span class="nav-text">拆线图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#柱状图基础"><span class="nav-number">2.</span> <span class="nav-text">柱状图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通柱形图"><span class="nav-number">2.1.</span> <span class="nav-text">普通柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#簇状柱形图"><span class="nav-number">2.2.</span> <span class="nav-text">簇状柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆积柱形图"><span class="nav-number">2.3.</span> <span class="nav-text">堆积柱形图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条形图基础"><span class="nav-number">3.</span> <span class="nav-text">条形图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#散点图基础"><span class="nav-number">4.</span> <span class="nav-text">散点图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#气泡图基础"><span class="nav-number">5.</span> <span class="nav-text">气泡图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积图基础"><span class="nav-number">6.</span> <span class="nav-text">面积图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树地图基础"><span class="nav-number">7.</span> <span class="nav-text">树地图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#雷达图基础"><span class="nav-number">8.</span> <span class="nav-text">雷达图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箱型图基础"><span class="nav-number">9.</span> <span class="nav-text">箱型图基础</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拆线图基础"><span class="nav-number">1.</span> <span class="nav-text">拆线图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#柱状图基础"><span class="nav-number">2.</span> <span class="nav-text">柱状图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通柱形图"><span class="nav-number">2.1.</span> <span class="nav-text">普通柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#簇状柱形图"><span class="nav-number">2.2.</span> <span class="nav-text">簇状柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆积柱形图"><span class="nav-number">2.3.</span> <span class="nav-text">堆积柱形图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条形图基础"><span class="nav-number">3.</span> <span class="nav-text">条形图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#散点图基础"><span class="nav-number">4.</span> <span class="nav-text">散点图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#气泡图基础"><span class="nav-number">5.</span> <span class="nav-text">气泡图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积图基础"><span class="nav-number">6.</span> <span class="nav-text">面积图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树地图基础"><span class="nav-number">7.</span> <span class="nav-text">树地图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#雷达图基础"><span class="nav-number">8.</span> <span class="nav-text">雷达图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箱型图基础"><span class="nav-number">9.</span> <span class="nav-text">箱型图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#饼状图基础"><span class="nav-number">10.</span> <span class="nav-text">饼状图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圆环图基础"><span class="nav-number">11.</span> <span class="nav-text">圆环图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力图基础"><span class="nav-number">12.</span> <span class="nav-text">热力图基础</span></a></li></ol></div>
             
 
           </div>
