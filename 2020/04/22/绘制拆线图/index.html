@@ -118,7 +118,15 @@
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/pie2.jpg">
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/18.png">
 <meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/imshow.jpg">
-<meta property="og:updated_time" content="2020-04-29T08:23:24.000Z">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/19.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/20.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/21.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/plot&plot.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/22.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/plot&bar.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/23.png">
+<meta property="og:image" content="http://yoursite.com/2020/04/22/绘制拆线图/twinx.jpg">
+<meta property="og:updated_time" content="2020-05-06T08:43:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绘制拆线图">
 <meta name="twitter:description" content="拆线图基础plot方法 1234567891011121314151617181920212223242526272829303132333435363738394041# 导入库import numpy as npimport matplotlib.pyplot as plt# 解决中文乱码问题plt.rcParams[&amp;apos;font.sans-serif&amp;apos;] = [&amp;apos;">
@@ -435,6 +443,29 @@
 <img src="/2020/04/22/绘制拆线图/18.png">
 <p>效果如下：</p>
 <img src="/2020/04/22/绘制拆线图/imshow.jpg">
+
+<h1 id="水平线和垂直线基础"><a href="#水平线和垂直线基础" class="headerlink" title="水平线和垂直线基础"></a>水平线和垂直线基础</h1><p>水平线和垂直线主要用来做对比参考，它们使用的是 plt 库中的 axhline 和 axvline方法。</p>
+<img src="/2020/04/22/绘制拆线图/19.png">
+<p>效果如下：</p>
+
+
+<h1 id="绘制组合图表"><a href="#绘制组合图表" class="headerlink" title="绘制组合图表"></a>绘制组合图表</h1><p>组合图表就是在同一坐标系中绘制多张图表，常见有折线图+折线图、折线图+柱状图、柱状图+柱状图（簇状图）等形式。</p>
+<h2 id="折线图-折线图"><a href="#折线图-折线图" class="headerlink" title="折线图+折线图"></a>折线图+折线图</h2><p>在同一坐标系中绘制多条折线,一般直接运行多行绘制折线图代码即可</p>
+<img src="/2020/04/22/绘制拆线图/20.png">
+<img src="/2020/04/22/绘制拆线图/21.png">
+<p>效果图如下：</p>
+<img src="/2020/04/22/绘制拆线图/plot&plot.jpg">
+<h2 id="折线图-柱状图"><a href="#折线图-柱状图" class="headerlink" title="折线图+柱状图"></a>折线图+柱状图</h2><p>其它代码与 折线图+折线图相同，只有这点代码不同</p>
+<img src="/2020/04/22/绘制拆线图/22.png">
+<p>最终效果如下：</p>
+<img src="/2020/04/22/绘制拆线图/plot&bar.jpg">
+<p>其它组合图表如法炮制。</p>
+<h1 id="双坐标轴图表基础"><a href="#双坐标轴图表基础" class="headerlink" title="双坐标轴图表基础"></a>双坐标轴图表基础</h1><p>双坐标轴图表就是既有主坐标轴又有次坐标轴的图表，当两个不同量级的指标放在同一坐标系中时，就需要开启双坐标轴，比如任务量（绝对数）与完成率（相对数）就是两个不同量级的指标。</p>
+<h2 id="双-y-轴图表基础"><a href="#双-y-轴图表基础" class="headerlink" title="双 y 轴图表基础"></a>双 y 轴图表基础</h2><p>代码如下</p>
+<img src="/2020/04/22/绘制拆线图/23.png">
+<p>效果如下：</p>
+<img src="/2020/04/22/绘制拆线图/twinx.jpg">
+
       
     </div>
     
@@ -621,7 +652,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拆线图基础"><span class="nav-number">1.</span> <span class="nav-text">拆线图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#柱状图基础"><span class="nav-number">2.</span> <span class="nav-text">柱状图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通柱形图"><span class="nav-number">2.1.</span> <span class="nav-text">普通柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#簇状柱形图"><span class="nav-number">2.2.</span> <span class="nav-text">簇状柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆积柱形图"><span class="nav-number">2.3.</span> <span class="nav-text">堆积柱形图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条形图基础"><span class="nav-number">3.</span> <span class="nav-text">条形图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#散点图基础"><span class="nav-number">4.</span> <span class="nav-text">散点图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#气泡图基础"><span class="nav-number">5.</span> <span class="nav-text">气泡图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积图基础"><span class="nav-number">6.</span> <span class="nav-text">面积图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树地图基础"><span class="nav-number">7.</span> <span class="nav-text">树地图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#雷达图基础"><span class="nav-number">8.</span> <span class="nav-text">雷达图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箱型图基础"><span class="nav-number">9.</span> <span class="nav-text">箱型图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#饼状图基础"><span class="nav-number">10.</span> <span class="nav-text">饼状图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圆环图基础"><span class="nav-number">11.</span> <span class="nav-text">圆环图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力图基础"><span class="nav-number">12.</span> <span class="nav-text">热力图基础</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#拆线图基础"><span class="nav-number">1.</span> <span class="nav-text">拆线图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#柱状图基础"><span class="nav-number">2.</span> <span class="nav-text">柱状图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通柱形图"><span class="nav-number">2.1.</span> <span class="nav-text">普通柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#簇状柱形图"><span class="nav-number">2.2.</span> <span class="nav-text">簇状柱形图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆积柱形图"><span class="nav-number">2.3.</span> <span class="nav-text">堆积柱形图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条形图基础"><span class="nav-number">3.</span> <span class="nav-text">条形图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#散点图基础"><span class="nav-number">4.</span> <span class="nav-text">散点图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#气泡图基础"><span class="nav-number">5.</span> <span class="nav-text">气泡图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积图基础"><span class="nav-number">6.</span> <span class="nav-text">面积图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树地图基础"><span class="nav-number">7.</span> <span class="nav-text">树地图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#雷达图基础"><span class="nav-number">8.</span> <span class="nav-text">雷达图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#箱型图基础"><span class="nav-number">9.</span> <span class="nav-text">箱型图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#饼状图基础"><span class="nav-number">10.</span> <span class="nav-text">饼状图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#圆环图基础"><span class="nav-number">11.</span> <span class="nav-text">圆环图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#热力图基础"><span class="nav-number">12.</span> <span class="nav-text">热力图基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#水平线和垂直线基础"><span class="nav-number">13.</span> <span class="nav-text">水平线和垂直线基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘制组合图表"><span class="nav-number">14.</span> <span class="nav-text">绘制组合图表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图-折线图"><span class="nav-number">14.1.</span> <span class="nav-text">折线图+折线图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图-柱状图"><span class="nav-number">14.2.</span> <span class="nav-text">折线图+柱状图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#双坐标轴图表基础"><span class="nav-number">15.</span> <span class="nav-text">双坐标轴图表基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#双-y-轴图表基础"><span class="nav-number">15.1.</span> <span class="nav-text">双 y 轴图表基础</span></a></li></ol></li></ol></div>
             
 
           </div>
