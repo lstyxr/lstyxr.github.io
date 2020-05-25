@@ -233,6 +233,398 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/使用Python几行代码轻松操作多线程和多进程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/" itemprop="url">使用Python几行代码轻松操作多线程和多进程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-02T15:21:28+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="多线程和多进程理解"><a href="#多线程和多进程理解" class="headerlink" title="多线程和多进程理解"></a>多线程和多进程理解</h1><p>线程：threading<br>进程：processing<br>1、threading 更多的是使用在频繁 I/O 的并发场景中，<br>玩过爬虫的都知道，<br>我们有时候会通过爬虫下载网页上的图片或其它文件内容，<br>这时候我们就可以使用 Python 的 threading 模块来做到多线程执行。</p>
+<p>2、processing 更多的是针对要充分使用 CPU 的并行场景，<br>比如的电脑的 CPU 是六核，<br>你希望你的程序运行能充分利用到六核，<br>那么就可以使用 processing。</p>
+<p>开户 1 个线程去执行 2 的 10 次方</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/1.png">
+
+<h1 id="再来看一个爬虫例子"><a href="#再来看一个爬虫例子" class="headerlink" title="再来看一个爬虫例子"></a>再来看一个爬虫例子</h1><p>不使用多线程的情况：</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/3.png">
+<p>可以看到总耗时2.9+秒完成爬取</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/4.png">
+
+<p>再来看看开启多线程的情况</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/5.png">
+<p>实现同样的功能，开启多线程只需0.8223秒就完成了<br>速度提高了 3.5+ 倍</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/6.png">
+
+<p>再来看看开启多进程,<br>把 <strong>ThreadPoolExecutor</strong> 改成 <strong>ProcessPoolExecutor</strong> 就可以了</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/7.png">
+<p>这里有个问题<br>多进程情况下，必要要用<br>if __name__ == ‘__main__:’<br>的方式才能运行多进程，否则报错<br>多线程不存在这个情况<br>这样能运行：</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/12.png"> 
+<p>不加 if __name__ == ‘__main__:’ 报错：<br>提示要加 if __name__ == ‘__main__:’</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/13.png">
+
+<h1 id="理解-submit-和-map-两种方式"><a href="#理解-submit-和-map-两种方式" class="headerlink" title="理解 submit 和 map 两种方式"></a>理解 submit 和 map 两种方式</h1><p>submit 方法:</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/8.png">
+<p>map 方法:</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/9.png">
+<p>它们的区别是：<br>submit方法 是传入参数从而调用具体方法<br>源码：</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/10.png">
+<p>map方法 是传入可迭代对象从而调用具体方法<br>源码：</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/11.png">
+
+<h1 id="多线程和多进程怎么选择的问题"><a href="#多线程和多进程怎么选择的问题" class="headerlink" title="多线程和多进程怎么选择的问题"></a>多线程和多进程怎么选择的问题</h1><p>CPU密集型：</p>
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/14.png">
+<img src="/2019/12/02/使用Python几行代码轻松操作多线程和多进程/15.png">
+<p>可以看到，多线程下执行时间并未缩短，单线程与多线程执行时间基本相同，这是由于GIL会把线程锁住，只允许一个线程执行<br>实际情况就是多线程至始至终还是单线程执行</p>
+<ul>
+<li>IO密集型：爬虫等频繁进行 IO 操作使用多线程较好，GIL会在IO等待时间里执行其它线程</li>
+<li>CPU密集型：对于主要是计算任务的CPU密集型程序使用多进程较好</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/23/Python各种下划线的骚操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LST">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coding Python">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/23/Python各种下划线的骚操作/" itemprop="url">Python各种下划线的骚操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-23T14:25:26+08:00">
+                2019-11-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/23/Python各种下划线的骚操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/23/Python各种下划线的骚操作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们在定义一些变量或者方法的时候，<br>常常会用到下划线，<br>在 Python 中，下划线可是很有用处的，<br>比如变量、方法中的使用，<br>有些是一个下划线开头的：_xx，<br>有些是两个下划线开头的：__xx，<br>有些是在名称的结尾添加下划线的：xx_，<br>还有一些方法我们常常看到两个下划线开头和结尾的：__xx__ 等等…</p>
+<h1 id="下划线的运用种类"><a href="#下划线的运用种类" class="headerlink" title="下划线的运用种类"></a>下划线的运用种类</h1><p>“_“<br>“_xx”<br>“xx_“<br>“__xx”<br>“__xx__“<br>“_classname__xx”</p>
+<h1 id="只有一个下划线“-”"><a href="#只有一个下划线“-”" class="headerlink" title="只有一个下划线“_”"></a>只有一个下划线“_”</h1><p>主要用在Python解释器中<br>_ 会指向你最后一次执行的表达式结果<br>在Python 实时交互的时候常常会用到</p>
+<p>指向最后执行的表达式</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/1.png" title="单下划线交互">
+<p>格式化变量</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/2.png" title="格式化变量值">
+<p>这样使代码中的变量值更易读<br>使用在循环中</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/3.png" title="循环使用">
+
+<h1 id="首尾分别二个下划线-xx"><a href="#首尾分别二个下划线-xx" class="headerlink" title="首尾分别二个下划线 __xx__"></a>首尾分别二个下划线 __xx__</h1><img src="/2019/11/23/Python各种下划线的骚操作/4.png">
+<p>这些我们叫它们为“魔法函数”<br>是Python 内置好了的，直接拿来用就行了<br>应尽量避免以这种方式命名变量</p>
+<h1 id="单个下划线开头的-xx"><a href="#单个下划线开头的-xx" class="headerlink" title="单个下划线开头的 _xx"></a>单个下划线开头的 _xx</h1><p>以单个下划线开关命名的方法或者变量<br>就是说明它是仅提供内部使用的<br>举例说明<br>先定义好一个模块 test1.py<br>其中有两个方法，一个是单划线开头，一个不是</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/5.png">
+<p>接着在第二个模块 test2 中 import test1<br>调用 test1 中的方法看看<br>当执行 my_func() 时成功</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/6.png">
+<img src="/2019/11/23/Python各种下划线的骚操作/7.png">
+
+<p>但是执行 _my_func() 时报错<br>“_my_func” 没有定义，<br>因此它只能在模块内部使用</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/8.png">
+<img src="/2019/11/23/Python各种下划线的骚操作/10.png">
+
+<p>这里有个问题是，直接 import test1<br>test1._my_func() 也是成功的<br>把 test1 模块名写在前面相当于显式内部调用吧</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/9.png">
+<img src="/2019/11/23/Python各种下划线的骚操作/11.png">
+
+<h1 id="单个下划线结尾的-xx"><a href="#单个下划线结尾的-xx" class="headerlink" title="单个下划线结尾的 xx_"></a>单个下划线结尾的 xx_</h1><p>Python 中的许多关键字<br>def、return、class、pass、True、False等等<br>是不能用来命名的</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/12.png">
+
+<p>如果非要使用这些系统关键词<br>就可以在尾部加 _</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/13.png">
+<p>但不建议这么做，还是选用其它的名称命名吧</p>
+<h1 id="两个下划线开头的命名：-xx"><a href="#两个下划线开头的命名：-xx" class="headerlink" title="两个下划线开头的命名：__xx"></a>两个下划线开头的命名：__xx</h1><p>这种命名方式更多的是用在类的继承<br>通过两个下划线开头命名的成员<br>可以<strong>防止被子类重写</strong></p>
+<img src="/2019/11/23/Python各种下划线的骚操作/14.png">
+<img src="/2019/11/23/Python各种下划线的骚操作/15.png">
+
+<p>这里可以看出<br>name 可以访问<br>但是 __age 无法访问的<br>所以就无法重写父类的 __age</p>
+<p>打印对象的属性：</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/16.png">
+<p>从输出的属性中可以看到<br>name 还是 name<br>但 __age 变成了 _Person__age</p>
+<p>来来个继承看看</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/17.png">
+<p>可以看到，name 被子类重写了，而 __age 不能访问，也没有被重写<br>同时，打印一下 Son 的属性看看</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/18.png">
+<p>这里 son 类里面定义的 __age 已经变成了 _Son__age<br>所以要访问或重写只能这样显式调用</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/19.png">
+<p>可以成功访问父类和子类的__age 属性</p>
+<h1 id="一个下划线-类名-二个下划线开头的命名：-classname-xx"><a href="#一个下划线-类名-二个下划线开头的命名：-classname-xx" class="headerlink" title="一个下划线+类名+二个下划线开头的命名：_classname__xx"></a>一个下划线+类名+二个下划线开头的命名：_classname__xx</h1><p>可以像这样指定类名的方式命名</p>
+<img src="/2019/11/23/Python各种下划线的骚操作/20.png">
+
+<p>Python 并没有向别的编程语言那样有 private 来修饰属性进行私有化，<br>所以可以通过 __ 的方式进行 “伪私有化”，<br>不过还是可以通过实例访问得到相应的值</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/22/使用enumerate来枚举可遍历对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1846,399 +2238,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/06/如何使用lambda一行实现一个函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LST">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding Python">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/06/如何使用lambda一行实现一个函数/" itemprop="url">如何使用lambda一行实现一个函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T15:11:15+08:00">
-                2019-11-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python进阶/" itemprop="url" rel="index">
-                    <span itemprop="name">Python进阶</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/06/如何使用lambda一行实现一个函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/06/如何使用lambda一行实现一个函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="理解-匿名函数-基础"><a href="#理解-匿名函数-基础" class="headerlink" title="理解 匿名函数 基础"></a>理解 匿名函数 基础</h1><p>常规函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def add(x):</span><br><span class="line">    return x + 1</span><br><span class="line"></span><br><span class="line">print(add(5))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>6</p>
-</blockquote>
-<p>匿名函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print((lambda x: x + 1)(5))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>6</p>
-</blockquote>
-<p>匿名函数格式<br>lambda 参数1，参数1，参数1，…参数n : 表达式<br>应用场景：如果代码有很多重复，往往要将重复代码抽成一个方法函数，然后在需要的地方调用就可以了<br>有一种情况是：函数只用一次就不要了，这时候就可以使用匿名函数 lambda 上场，简化代码<br>一般函数传参：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def add(x, y):</span><br><span class="line">    return x + y</span><br><span class="line">print(add(1, 2))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>3</p>
-</blockquote>
-<p>匿名函数传参<br>添加 () 传参</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print((lambda x, y: x + y)(10, 20))</span><br><span class="line">(lambda *args: print(args))(1, 2)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>30<br>(1, 2)</p>
-</blockquote>
-<p>这句代码的意思是说<br>遍历 0-9 这 10 个数字<br>然后把每个数逐个交给匿名函数处理<br>处理的方式就是 x % 2<br>最后将得到的结果放进列表里面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_list = [(lambda x: x % 2)(x) for x in range(10)]</span><br><span class="line">print(my_list)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[0, 1, 0, 1, 0, 1, 0, 1, 0, 1]</p>
-</blockquote>
-<p><strong>所谓 “匿名”</strong><br><strong>说的就是这个函数没有定义名称</strong><br><strong>不再像我们之前使用自定义函数那样</strong><br><strong>还必要给函数起个名称</strong></p>
-<p>下面是使用传统函数实现以上方法，仔细看区别之处<br>使用匿名函数极大的简化了代码量，<br>使用匿名函数使程序主逻辑更清晰，但前提是：能理解匿名函数的实现功能细节<br>能否看懂别人写的匿名函数将是关键点，这一点与 Excel 中的公式相似</p>
-<p><strong>匿名函数：无名函数</strong><br><strong>传统函数：有名函数</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def get_list(n):</span><br><span class="line">    my_list2 = []</span><br><span class="line">    for i in range(n):</span><br><span class="line">        my_list2.append(i % 2)</span><br><span class="line">    return my_list2</span><br><span class="line"></span><br><span class="line">print(get_list(10))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[0, 1, 0, 1, 0, 1, 0, 1, 0, 1]</p>
-</blockquote>
-<p>避免为了匿名而匿名，画蛇添足<br>像下面这样的代码<br>虽然定义了匿名函数，但还是返回来像传统有名函数那样调用，就应尽量避免</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add = (lambda x, y: x + y)</span><br><span class="line">print(add(1, 2))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>3</p>
-</blockquote>
-<h1 id="匿名函数在啥时候用呢？"><a href="#匿名函数在啥时候用呢？" class="headerlink" title="匿名函数在啥时候用呢？"></a>匿名函数在啥时候用呢？</h1><p>匿名函数在那些<strong>只需要执行一次就不要了</strong>的场景中使用<br>可以想到在函数式编程中将运用很广泛<br>结合 Python 中的 map() filter() 这两个函数高效使用</p>
-<h2 id="map-函数"><a href="#map-函数" class="headerlink" title="map() 函数"></a>map() 函数</h2><p><strong>map(函数对象，序列)</strong><br>map函数有两个参数<br>第一个可以传入 函数 ， 第二个传入 序列<br>当执行这个 map 时，序列里面的每个值都会被取出，然后拿去执行传入的函数</p>
-<p>map函数结合传统有名函数使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br><span class="line"></span><br><span class="line">def add(x):</span><br><span class="line">    return x + 5</span><br><span class="line"></span><br><span class="line">print(list(map(add, my_list)))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[6, 7, 8, 9, 10, 11, 12, 13, 14, 15]</p>
-</blockquote>
-<p>map 函数结合匿名函数使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span><br><span class="line">print(list(map((lambda x: x + 5), my_list)))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[6, 7, 8, 9, 10, 11, 12, 13, 14, 15]</p>
-</blockquote>
-<h2 id="filter-函数"><a href="#filter-函数" class="headerlink" title="filter() 函数"></a>filter() 函数</h2><p><strong>filter(函数对象，序列)</strong><br>filter 中传入的函数对象一般用于判断<br>过滤判断提取出：一个列表中的数 %2 是等于 0 的数，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(list(filter((lambda x: x % 2 == 0), my_list)))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>[2, 4, 6, 8, 10]</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/04/使用模块化和packages/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LST">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Coding Python">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/04/使用模块化和packages/" itemprop="url">使用模块化和packages</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-04T16:00:18+08:00">
-                2019-11-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python入门/" itemprop="url" rel="index">
-                    <span itemprop="name">Python入门</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/04/使用模块化和packages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/04/使用模块化和packages/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在同一目录下自定义模块 calc.py，供其它文件调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">import operator</span><br><span class="line">def add(*number):</span><br><span class="line">    return sum(number)</span><br><span class="line"></span><br><span class="line">def product(*number):</span><br><span class="line">    return reduce(operator.mul, number, 1)</span><br><span class="line"></span><br><span class="line"># 避免被调用 import 时执行以下代码，否则这两个print 在被import 时会被自动执行</span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    print(add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line">    print(product(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br></pre></td></tr></table></figure>
-
-<p>模块： 函数 类 的存放之地，高级<br>需要将代码进行模块化，<br>将代码进行归类，整理好，以后方便使用和检索<br>模块化的好处在项目越来越大的时候最能体现出来</p>
-<p>当使用 import 时，Python 解释器按下列顺序查找相应模块<br>当前文件路径 ——》Python 设置的环境变量 ——》系统默认路径（python 安装路径）</p>
-<p><strong>import 一般写在程序的最前面，这是因为 python 对 import 只执行一次，</strong><br><strong>不会导入重复的模块进来</strong></p>
-<h1 id="在同一目录下，直接-import-模块名称-导入"><a href="#在同一目录下，直接-import-模块名称-导入" class="headerlink" title="在同一目录下，直接 import 模块名称 导入"></a>在同一目录下，直接 import 模块名称 导入</h1><p><strong>需要指定模块名 calc</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import calc</span><br><span class="line">print(calc.add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line">print(calc.product(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>55<br>3628800</p>
-</blockquote>
-<h1 id="from-模块名-import-具体函数"><a href="#from-模块名-import-具体函数" class="headerlink" title="from 模块名 import 具体函数"></a>from 模块名 import 具体函数</h1><p>这种方式只引用模块中的部分方法<br><strong>在调用方法时不需要指定模块名 calc ,直接写方法名 product</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from calc import product</span><br><span class="line">print(product(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br></pre></td></tr></table></figure>
-
-<h1 id="from-模块名-import"><a href="#from-模块名-import" class="headerlink" title="from 模块名 import *"></a>from 模块名 import *</h1><p>应用模块下所有内容<br><strong>在调用方法时不需要指定模块名 calc ,直接写方法名 product</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from calc import *</span><br><span class="line">print(add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line">print(product(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>55<br>3628800</p>
-</blockquote>
-<h1 id="使用包-packages-引用"><a href="#使用包-packages-引用" class="headerlink" title="使用包 packages 引用"></a>使用包 packages 引用</h1><p><strong>包 package 实际就是一个目录</strong><br><strong>比直接在当前目录下引用多了一层目录路径的描述</strong><br><strong>from 包名（目录名）.模块名 import 方法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from sub_package.calc import add, product</span><br><span class="line">from sub_package2.calc import add as add2, product as product2</span><br><span class="line"></span><br><span class="line">print(add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line">print(product(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line"></span><br><span class="line">print(add2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br><span class="line">print(product2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>引用的 sub_package<br>55<br>引用的 sub_package<br>3628800<br>引用的 sub_package2<br>55<br>引用的 sub_package2<br>3628800</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2289,7 +2288,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2300,7 +2299,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2311,7 +2310,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">219</span>
+                  <span class="site-state-item-count">222</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
